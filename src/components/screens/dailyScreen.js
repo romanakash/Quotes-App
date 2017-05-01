@@ -4,6 +4,7 @@ import { styles } from 'react-native-theme';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import DateTimePicker from 'react-native-modal-datetime-picker';
 import moment from 'moment';
+import Reactotron from 'reactotron-react-native';
 
 import Linear from '../ui/linearGradient';
 import TabBar from '../tabBar';
@@ -36,24 +37,27 @@ class DailyScreen extends Component {
     // Changes the daily quote according to this.state.date
     changeDaily() {
         let { data, date } = this.state;
+        Reactotron.log(data)
         const formatDate = moment(date).format('DD-MM-YY');
-        for (obj of data) {
-            if (obj.creationDate === formatDate) {
-                this.setState({
-                    daily: {
-                        day: obj.day,
-                        value: obj.value,
-                        author: obj.author
-                    }
-                })
+        if (data !== undefined) {
+            for (obj of data) {
+                if (obj.creationDate === formatDate) {
+                    this.setState({
+                        daily: {
+                            day: obj.day,
+                            value: obj.value,
+                            author: obj.author
+                        }
+                    })
+                }
             }
-            else {
-                this.setState({ daily: null })
-            }
+        }
+        else {
+            this.setState({ daily: null })
         }
     }
     getMinAndMaxDates(first) {
-        var date = new Date(), y = date.getFullYear(), m = date.getMonth();
+        var date = this.state.date, y = date.getFullYear(), m = date.getMonth();
         if (first) {
             var firstDay = new Date(y, m, 1);
             return firstDay
@@ -65,6 +69,7 @@ class DailyScreen extends Component {
     }
     // Handles the date from DateTimePicker
     _handleDate = (date) => {
+        Reactotron.log(date)
         this.setState({ date: date })
         this.changeDaily();
         this._hidePicker();

@@ -16,7 +16,7 @@ const AppNavigator = StackNavigator({
 },
 {
     initialRouteName: 'Daily',
-    headerMode: 'none'
+    headerMode: 'none',
 })
 
 // Notification Stuff

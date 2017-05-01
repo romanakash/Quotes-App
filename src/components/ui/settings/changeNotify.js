@@ -17,9 +17,7 @@ class ChangeNotify extends Component {
     _showPicker = () => this.setState({ picker: true });
     _hidePicker = () => this.setState({ picker: false });
 
-    _handleTime = (time) => {
-        let date = new Date();
-        date.setHours(time.hour, time.minute, 0, 0)
+    _handleTime = (date) => {
         let formatTime = moment(date).format("H:m");
         changeNotificationTime(formatTime);
         this._hidePicker();

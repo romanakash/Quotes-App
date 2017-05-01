@@ -13,4 +13,4 @@ const initNotifications = () => {
     })
 }
 
-export default initNotification;
+export default initNotifications;
