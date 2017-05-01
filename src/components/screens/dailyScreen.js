@@ -80,6 +80,15 @@ class DailyScreen extends Component {
                 </View>
             );
         }
+        else {
+            return (
+                <View style={{ flex: 0.05, marginBottom: 5 }}>
+                    <Text style={styles.daily_day}>
+                        {moment().format('dddd')}
+                    </Text>
+                </View>
+            );
+        }
     }
     // Renders the Date
     renderDate() {

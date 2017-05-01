@@ -11,7 +11,7 @@ const seedSettings = () => {
         quotesRealm.create('Settings', {
             id: 1,
             quoteFamily: 'Quicksand-Light',
-            notificationTime: '9:00',
+            notificationTime: '9:0',
             month: newMonth,
             gradients: {
                 color_one: '#ee0979',

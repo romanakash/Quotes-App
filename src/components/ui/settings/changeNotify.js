@@ -6,6 +6,9 @@ import DateTimePicker from 'react-native-modal-datetime-picker';
 import Reactotron from 'reactotron-react-native';
 import moment from 'moment';
 
+import getNotificationDate from '../../../data/getNotificationDate';
+import changeNotificationTime from '../../../realm/updates/changeNotificationTime';
+
 class ChangeNotify extends Component {
     state = {
         picker: false,
@@ -15,7 +18,10 @@ class ChangeNotify extends Component {
     _hidePicker = () => this.setState({ picker: false });
 
     _handleTime = (time) => {
-        Reactotron.log(time)
+        let date = new Date();
+        date.setHours(time.hour, time.minute, 0, 0)
+        let formatTime = moment(date).format("H:m");
+        changeNotificationTime(formatTime);
         this._hidePicker();
     }
     render() {
@@ -26,7 +32,8 @@ class ChangeNotify extends Component {
                 >
                     <Icon size={24} color="white" name="notifications" />
                     <Text style={styles.settings_text}>
-                        Notification Timing
+                        Notification Time  {'\n'}
+                        {moment(getNotificationDate()).format('H : m')}
                     </Text>
                 </TouchableOpacity>
                 <DateTimePicker
@@ -34,6 +41,7 @@ class ChangeNotify extends Component {
                     isVisible={this.state.picker}
                     onConfirm={this._handleTime}
                     onCancel={this._hidePicker}
+                    date={getNotificationDate()}
                 />
             </View>
         );

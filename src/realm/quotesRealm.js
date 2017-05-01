@@ -32,7 +32,7 @@ const Gradient = {
     }
 }
 
-Settings = {
+const Settings = {
     name: 'Settings',
     primaryKey: 'id',
     properties: {

@@ -23,7 +23,7 @@ class DrawerMenu extends Component {
         return (
             <ScrollView>
                 <View style={styles.drawer_menu_container}>
-                    <Text style={[ styles.drawer_menu_text, {margin: 5, fontSize: 19} ]}>
+                    <Text style={[styles.drawer_menu_text, {margin: 5, fontSize: 19}]}>
                         CATEGORIES
                     </Text>
                     { this.renderCategories() }

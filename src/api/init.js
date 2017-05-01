@@ -1,6 +1,4 @@
-/* initializes the api to conect to
-    the mongodb database and hapijs server
-*/
+// initializes the api to conect to nodejs server
 
 import { create } from 'apisauce';
 

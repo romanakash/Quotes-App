@@ -52,7 +52,7 @@ class QuoteScreen extends Component {
                     content={<DrawerMenu tagClick={this._tagClick} />}
                     type="overlay"
                     tapToClose={true}
-                    openDrawerOffset={0.4}
+                    openDrawerOffset={(viewport) => viewport.width - 250}
                     tweenHandler={(ratio) => ({
                         main: { opacity:(4-(ratio*3.35))/4 }
                     })}
