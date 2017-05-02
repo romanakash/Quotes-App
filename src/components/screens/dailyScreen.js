@@ -4,7 +4,6 @@ import { styles } from 'react-native-theme';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import DateTimePicker from 'react-native-modal-datetime-picker';
 import moment from 'moment';
-import Reactotron from 'reactotron-react-native';
 
 import Linear from '../ui/linearGradient';
 import TabBar from '../tabBar';
@@ -37,7 +36,6 @@ class DailyScreen extends Component {
     // Changes the daily quote according to this.state.date
     changeDaily() {
         let { data, date } = this.state;
-        Reactotron.log(data)
         const formatDate = moment(date).format('DD-MM-YY');
         if (data !== undefined) {
             for (obj of data) {
