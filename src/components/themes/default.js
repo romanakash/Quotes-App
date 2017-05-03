@@ -39,6 +39,8 @@ theme.add({
         opacity: 0.3
     },
     top_container: {
+        flex: 1,
+        flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center'
     },

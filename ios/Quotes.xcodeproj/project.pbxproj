@@ -78,7 +78,6 @@
 		38ACFA34AED0443BB4630DB1 /* Varela-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 61EA77A2DBCA4AFCA1DDF8FF /* Varela-Regular.otf */; };
 		C26020E3287F4BA489E792B7 /* AvenirNext-Ultralight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 17C1D2DB4766435C8D31CBAE /* AvenirNext-Ultralight.ttf */; };
 		A5C0375739CC4E579F196D6B /* HelveticaNeue-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAE36C4D4BB54DD884CC9D21 /* HelveticaNeue-Thin.ttf */; };
-		B0E44E9D751C467880B657C4 /* libRNSpinkit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE1DD02F4F04DDC8B44FB77 /* libRNSpinkit.a */; };
 		6ED0029925284CAC8F5794EC /* PT-Sans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BD6ADE4042B444EBBBBA789 /* PT-Sans.ttf */; };
 /* End PBXBuildFile section */
 
@@ -345,8 +344,6 @@
 		61EA77A2DBCA4AFCA1DDF8FF /* Varela-Regular.otf */ = {isa = PBXFileReference; name = "Varela-Regular.otf"; path = "../fonts/Varela-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		17C1D2DB4766435C8D31CBAE /* AvenirNext-Ultralight.ttf */ = {isa = PBXFileReference; name = "AvenirNext-Ultralight.ttf"; path = "../fonts/AvenirNext-Ultralight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		AAE36C4D4BB54DD884CC9D21 /* HelveticaNeue-Thin.ttf */ = {isa = PBXFileReference; name = "HelveticaNeue-Thin.ttf"; path = "../fonts/HelveticaNeue-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		7A0F59AEEEF84B77A68688CE /* RNSpinkit.xcodeproj */ = {isa = PBXFileReference; name = "RNSpinkit.xcodeproj"; path = "../node_modules/react-native-spinkit/ios/RNSpinkit.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		9BE1DD02F4F04DDC8B44FB77 /* libRNSpinkit.a */ = {isa = PBXFileReference; name = "libRNSpinkit.a"; path = "libRNSpinkit.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		9BD6ADE4042B444EBBBBA789 /* PT-Sans.ttf */ = {isa = PBXFileReference; name = "PT-Sans.ttf"; path = "../fonts/PT-Sans.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
@@ -379,7 +376,6 @@
 				755C6423E223403290507DBD /* libRealmReact.a in Frameworks */,
 				6DD3076063264C78942B5209 /* libc++.tbd in Frameworks */,
 				7D1ACABE24774187B667FCFC /* libz.tbd in Frameworks */,
-				B0E44E9D751C467880B657C4 /* libRNSpinkit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,7 +545,6 @@
 				74880BE36DCA47E99A07A3B8 /* BVLinearGradient.xcodeproj */,
 				98E41D3910624656B0BB1041 /* RNVectorIcons.xcodeproj */,
 				F2B50A07525D429399C70DFD /* RealmReact.xcodeproj */,
-				7A0F59AEEEF84B77A68688CE /* RNSpinkit.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";

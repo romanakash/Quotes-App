@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Grid, Row } from 'react-native-easy-grid';
+import { View } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import Reactotron from 'reactotron-react-native';
 
 import Drawer from 'react-native-drawer';
 import QuoteSwiper from '../ui/quote/quoteSwiper';
@@ -59,21 +58,21 @@ class QuoteScreen extends Component {
                     tweenDuration={500}
                     tweenEasing="easeInOutSine"
                 >
-                    <Grid>
-                        <Row size={10}>
+                    <View style={{flex: 1}}>
+                        <View style={{flex: 0.1}}>
                             <Top
                                 menuClick={this._drawerChange}
                                 refreshClick={this._refreshChange}
                                 tag={this.state.tag}
                             />
-                        </Row>
-                        <Row size={90}>
+                        </View>
+                        <View style={{flex: 0.9}}>
                             <QuoteSwiper
                                 ref={ref => this._quoteSwiper = ref}
                                 quotes={this.state.data}
                             />
-                        </Row>
-                    </Grid>
+                        </View>
+                    </View>
                 </Drawer>
                 <TabBar navigation={this.props.navigation}/>
             </Linear>

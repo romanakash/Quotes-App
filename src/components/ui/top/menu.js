@@ -9,7 +9,6 @@ const MenuButton = ({ menuClick }) => (
         size={30}
         backgroundColor="transparent"
         onPress={menuClick}
-        iconStyle={{ margin: 5, marginRight: 0}}
     />
 );
 

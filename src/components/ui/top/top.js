@@ -19,17 +19,17 @@ class Top extends Component {
     }
     render() {
         return (
-            <Grid>
-                <Col size={25}>
+            <View style={styles.top_container}>
+                <View style={{flex: 0.25, alignItems: 'center'}}>
                     <MenuButton menuClick={this.props.menuClick}/>
-                </Col>
-                <Col size={50} style={styles.top_container}>
+                </View>
+                <View style={{flex: 0.50, alignItems: 'center'}}>
                     <Text style={styles.top_text}>{this.state.txt}</Text>
-                </Col>
-                <Col size={25}>
+                </View>
+                <View style={{flex: 0.25, alignItems: 'center'}}>
                     <RefreshButton refreshClick={this.props.refreshClick}/>
-                </Col>
-            </Grid>
+                </View>
+            </View>
         );
     }
 }

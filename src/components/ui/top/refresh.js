@@ -9,7 +9,6 @@ const RefreshButton = ({ refreshClick }) => (
         size={27}
         backgroundColor="transparent"
         onPress={refreshClick}
-        iconStyle={{ margin: 5, marginRight: 0, marginLeft: 30, paddingTop: 5}}
     />
 );
 
