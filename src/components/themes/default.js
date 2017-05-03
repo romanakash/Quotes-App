@@ -7,7 +7,7 @@ theme.add({
         alignItems: 'center',
         flexDirection: 'column',
         backgroundColor: 'transparent',
-        paddingBottom: 200
+        paddingBottom: 60
     },
     quote_text: {
         color: 'white',
@@ -79,7 +79,7 @@ theme.add({
         bottom: 0,
         left: 0,
         paddingTop: 380,
-        alignItems: 'center'
+        alignItems: 'center',
     },
     date_container: {
         margin: 5,

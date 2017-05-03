@@ -1,6 +1,6 @@
 import Realm from 'realm';
 
-Quote = {
+const Quote = {
     name: 'Quote',
     primaryKey: 'id',
     properties: {
@@ -12,7 +12,7 @@ Quote = {
     },
 }
 
-DailyQuotes = {
+const DailyQuotes = {
     name: 'Daily',
     properties: {
         id: 'string',

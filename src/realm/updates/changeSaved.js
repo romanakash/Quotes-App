@@ -1,4 +1,5 @@
 import quotesRealm from '../quotesRealm';
+import Reactotron from 'reactotron-react-native';
 
 const changeSaved = (objId, save) => {
     quotesRealm.write(() => {

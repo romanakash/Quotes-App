@@ -22,7 +22,8 @@
     "react-native-theme": "^0.1.7",
     "react-native-vector-icons": "^4.0.0",
     "react-navigation": "^1.0.0-beta.9",
-    "realm": "^0.15.4"
+    "realm": "^0.15.4",
+    "rn-viewpager": "^1.2.2"
   },
   "devDependencies": {
     "babel-jest": "19.0.0",

@@ -5,7 +5,6 @@
 
 import './quotesRealm'; // defines schema and inits quotesRealm
 
-
 import quotesRealm from '../realm/quotesRealm';
 import getInitialQuotes from '../api/getInitialQuotes';
 import getDailyQuotes from '../api/getDailyQuotes';

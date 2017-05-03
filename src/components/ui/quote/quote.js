@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableWithoutFeedback, Alert } from 'react-native';
-import PropTypes from 'prop-types';
-import Icon from 'react-native-vector-icons/Ionicons';
 import { styles } from 'react-native-theme';
+import Icon from 'react-native-vector-icons/Ionicons';
 import * as Animatable from 'react-native-animatable';
+import PropTypes from 'prop-types';
 
 import Author from './author';
 import changeSaved from '../../../realm/updates/changeSaved';
@@ -11,7 +11,8 @@ import getFont from '../../themes/getFont';
 
 class Quote extends Component {
     state = {
-        press: new Date().getTime()
+        press: new Date().getTime(),
+        saved: this.props.saved
     }
     _checkDoubleTap = () => {
         delta = new Date().getTime() - this.state.press;
@@ -19,12 +20,12 @@ class Quote extends Component {
             this.animation();
             this.saveQuote();
         }
-        this.setState({                                     // change time - double tap
+        this.setState({                         // change time - double tap
             press: new Date().getTime()
         })
     }
     animation = () => {
-        if (this.props.saved) {
+        if (this.state.saved) {
             this._heart.fadeOut(500);
         }
         else {
@@ -33,13 +34,14 @@ class Quote extends Component {
     }
     saveQuote() {                               // changes save => true ? false
         let objId = this.props.id;              // gets id
-        let save = !this.props.saved;           // gets opposite state
+        let save = !this.state.saved;           // gets opposite state
         changeSaved(objId, save);               // changes realm
+        this.setState({ saved: save })          // change local state
     }
     renderHeart() {
         return (
             <Animatable.View ref={ref => this._heart = ref}
-                style={[styles.heart_container, { opacity: this.props.saved ? 1 : 0 }]}
+                style={[styles.heart_container, { opacity: ~~this.state.saved }]}
                 easing="ease-out-expo"
             >
                 <Icon.Button

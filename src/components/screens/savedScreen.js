@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons'
 import { styles } from 'react-native-theme';
-import Reactotron from 'reactotron-react-native';
 
 import Linear from '../ui/linearGradient';
 import TabBar from '../tabBar';
@@ -30,7 +29,7 @@ class SavedScreen extends Component {
         }
         else {
             return (
-                <View style={[styles.quote_container, { paddingTop: 95 }]}>
+                <View style={styles.quote_container}>
                     <Text style={[styles.quote_text, { fontFamily: getFont() }]}>
                         You have no Saved Quotes
                     </Text>
