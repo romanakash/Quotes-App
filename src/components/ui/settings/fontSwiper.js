@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { styles } from 'react-native-theme';
-import Swiper from 'react-native-swiper';
+import { IndicatorViewPager, PagerDotIndicator } from 'rn-viewpager';
 
 import LinearGradient from '../../ui/linearGradient';
 import getColor from '../../themes/getColor';
@@ -12,36 +12,45 @@ class FontSwiper extends Component {
         let colors = getColor();
         return (
             fonts.map((font, index) =>
-                <Theme key={index}
-                    font={font}
-                    colors={colors}
-                    onPress={() => this.props.onClose(font)}
-                />
+                <View style={{flex: 1}} key={index}>
+                    <Font key={index}
+                        font={font}
+                        colors={colors}
+                        onPress={() => this.props.onClose(font)}
+                    />
+                </View>
             )
         );
     }
+    _renderDotIndicator() {
+       return (
+           <PagerDotIndicator pageCount={14}
+               dotStyle={styles.settings_pagination}
+               selectedDotStyle={[styles.settings_pagination, {
+                   backgroundColor: 'white'
+               }]}
+           />
+       );
+   }
     render() {
         return (
-            <Swiper loop={true}
-                paginationStyle={{ width: 280 }}
-                dot={<View style={styles.settings_pagination} />}
-                activeDot={<View style={[styles.settings_pagination,
-                                    { backgroundColor: 'white'} ]} />}
+            <IndicatorViewPager style={{flex: 1}}
+                indicator={this._renderDotIndicator()}
             >
                 { this.renderFonts() }
-            </Swiper>
+            </IndicatorViewPager>
         );
     }
 }
 
-const Theme = ({ colors, font, onPress }) => (
+const Font = ({ colors, font, onPress }) => (
     <LinearGradient
         colors={colors}
         style={{flex: 1}}
         start={{ x: 0.25, y: 0.25 }}
         end={{ x: 1, y: 1 }}
     >
-        <View style={[styles.change_theme_container, { paddingTop: 100 }]}>
+        <View style={styles.change_theme_container}>
             <Text style={[styles.quote_text, { fontFamily: font }]}>
                 {font}
             </Text>

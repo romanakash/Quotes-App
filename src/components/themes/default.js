@@ -7,7 +7,7 @@ theme.add({
         alignItems: 'center',
         flexDirection: 'column',
         backgroundColor: 'transparent',
-        paddingBottom: 60
+        paddingBottom: 50
     },
     quote_text: {
         color: 'white',
@@ -100,13 +100,13 @@ theme.add({
         paddingLeft: 15
     },
     settings_pagination: {
-        backgroundColor: 'rgba(255,255,255,0.5)',
-        margin: 7,
-        marginLeft: 5,
-        width: 5,
+        backgroundColor: 'rgba(255,255,255,0.15)',
+        margin: 0,
+        marginLeft: 0,
+        width: 15,
         height: 5,
-        borderRadius: 4,
-        marginBottom: 70
+        marginBottom: 40,
+        borderRadius: 1
     },
     change_theme_container: {
         width: 280,
@@ -119,7 +119,6 @@ theme.add({
         color: 'white',
         fontSize: 50,
         margin: 15,
-        paddingTop: 100,
     },
     change_theme_button: {
         margin: 5,

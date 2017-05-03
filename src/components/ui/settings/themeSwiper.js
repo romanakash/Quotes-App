@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import { styles } from 'react-native-theme';
 import PropTypes from 'prop-types';
 import LinearGradient from 'react-native-linear-gradient';
-import Swiper from 'react-native-swiper';
+import { IndicatorViewPager, PagerDotIndicator } from 'rn-viewpager';
 
 import gradients from '../../themes/gradients';
 
@@ -11,24 +11,33 @@ class ThemeSwiper extends Component {
     renderThemes() {
         return (
             gradients.map((gradient, index) =>
-                <Theme key={index}
-                    name={gradient.name}
-                    colors={gradient.colors}
-                    onPress={() => this.props.onClose(gradient.name)}
-                />
+                <View style={{flex:1}} key={index}>
+                    <Theme key={index}
+                        name={gradient.name}
+                        colors={gradient.colors}
+                        onPress={() => this.props.onClose(gradient.name)}
+                    />
+                </View>
             )
         );
     }
+    _renderDotIndicator() {
+       return (
+           <PagerDotIndicator pageCount={14}
+               dotStyle={styles.settings_pagination}
+               selectedDotStyle={[styles.settings_pagination, {
+                   backgroundColor: 'white'
+               }]}
+           />
+       );
+   }
     render() {
         return (
-            <Swiper loop={true}
-                paginationStyle={{ width: 280 }}
-                dot={<View style={styles.settings_pagination} />}
-                activeDot={<View style={[styles.settings_pagination,
-                                    { backgroundColor: 'white'} ]} />}
+            <IndicatorViewPager style={{flex: 1}}
+                indicator={this._renderDotIndicator()}
             >
                 { this.renderThemes() }
-            </Swiper>
+            </IndicatorViewPager>
         );
     }
 }
