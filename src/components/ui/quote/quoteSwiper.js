@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { View, Text, PanResponder } from 'react-native';
 import { styles } from 'react-native-theme';
 import { ViewPager } from 'rn-viewpager';
 import PropTypes from 'prop-types';

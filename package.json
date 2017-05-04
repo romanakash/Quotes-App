@@ -17,6 +17,7 @@
     "react-native-linear-gradient": "^2.0.0",
     "react-native-modal": "^2.2.0",
     "react-native-modal-datetime-picker": "^4.4.0",
+    "react-native-pull": "^2.0.2",
     "react-native-push-notification": "^2.2.1",
     "react-native-swiper": "^1.5.4",
     "react-native-theme": "^0.1.7",

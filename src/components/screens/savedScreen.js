@@ -29,7 +29,7 @@ class SavedScreen extends Component {
         }
         else {
             return (
-                <View style={styles.quote_container}>
+                <View style={[styles.quote_container, { paddingBottom: 90 }]}>
                     <Text style={[styles.quote_text, { fontFamily: getFont() }]}>
                         You have no Saved Quotes
                     </Text>
