@@ -33,12 +33,8 @@ class QuoteScreen extends Component {
     _tagClick = (newTag) => {
         this.setState({ tag: newTag })
         this.getQuotes(newTag);
-        this._quoteSwiper._onRefresh();
+        this._quoteSwiper._onRefresh(true);
         this._drawer.close();
-    }
-    _refreshChange = () => {
-        this.getQuotes(this.state.tag);
-        this._quoteSwiper._onRefresh();
     }
     _drawerChange = () => {
         this.setState({ drawer: !this.state.drawer })
@@ -70,6 +66,7 @@ class QuoteScreen extends Component {
                             <QuoteSwiper
                                 ref={ref => this._quoteSwiper = ref}
                                 quotes={this.state.data}
+                                onRefresh={() => this.getQuotes(this.state.tag)}
                             />
                         </View>
                     </View>

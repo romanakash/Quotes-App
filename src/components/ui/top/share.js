@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Icon from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import { Alert, Share } from 'react-native';
 
 class ShareButton extends Component {
@@ -9,9 +9,6 @@ class ShareButton extends Component {
             message: `"${this.props.value}" - ${this.props.authorName}`,
             title: "Shared from Quotes App"
         })
-        .then(() => Alert.alert(
-            'Succesfully Shared'
-        ))
         .catch((err) => Alert.alert(
             'Error',
             err.message
@@ -20,11 +17,12 @@ class ShareButton extends Component {
     render() {
         return (
             <Icon.Button
-                name="md-share-alt"
+                name="share"
                 color="white"
-                size={40}
+                size={25}
                 backgroundColor="transparent"
                 onPress={this._onShare}
+                iconStyle={{marginRight: 0}}
             />
         );
     }

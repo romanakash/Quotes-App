@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableWithoutFeedback, Alert } from 'react-native';
+import { View, Text, TouchableWithoutFeedback } from 'react-native';
 import { styles } from 'react-native-theme';
 import Icon from 'react-native-vector-icons/Ionicons';
 import * as Animatable from 'react-native-animatable';
@@ -54,10 +54,11 @@ class Quote extends Component {
         );
     }
     renderQuote() {
+        let font = getFont();
         return (
             <TouchableWithoutFeedback onPress={this._checkDoubleTap}>
                 <View style={styles.quote_container}>
-                    <Text style={[styles.quote_text, { fontFamily: this.props.font }]}>
+                    <Text style={[styles.quote_text, { fontFamily: font }]}>
                         {this.props.value}
                     </Text>
                     <Author name={this.props.authorName} />

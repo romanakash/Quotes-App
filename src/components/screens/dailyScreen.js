@@ -16,7 +16,6 @@ class DailyScreen extends Component {
         data: [],
         daily: null,
         date: new Date(),
-        font: '',
         picker: false
     }
     _showPicker = () => this.setState({ picker: true });
@@ -25,8 +24,6 @@ class DailyScreen extends Component {
     componentWillMount() {
         let ds = getDaily();            // gets the daily [30]
         this.setState({ data: ds })
-        let font = getFont();           // gets quoteFamily
-        this.setState({ font: font })
     }
     componentDidMount() {
         if (this.state.data !== undefined && this.state.data.length > 0) {
@@ -108,10 +105,11 @@ class DailyScreen extends Component {
     }
     // Renders the Quote
     renderDaily() {
+        let font = getFont();
         if (this.state.daily !== null) {
             return (
                 <View style={{ flex: 0.5, paddingTop: 65 }}>
-                    <Text style={[styles.quote_text, { fontFamily: this.state.font }]}>
+                    <Text style={[styles.quote_text, { fontFamily: font }]}>
                         { this.state.daily.value }
                     </Text>
                     <Text style={[styles.author_text, { paddingTop: 25 }]}>
@@ -121,9 +119,10 @@ class DailyScreen extends Component {
             );
         }
         else {
+            let font = getFont();
             return (
                 <View style={{ flex: 0.5, paddingTop: 65 }}>
-                    <Text style={[styles.quote_text, { fontFamily: this.state.font }]}>
+                    <Text style={[styles.quote_text, { fontFamily: font }]}>
                         We don't have a Quote for this day
                     </Text>
                     <Text style={[styles.author_text, { paddingTop: 25 }]}>

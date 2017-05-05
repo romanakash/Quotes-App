@@ -4,7 +4,7 @@ import { styles } from 'react-native-theme';
 import PropTypes from 'prop-types';
 
 import MenuButton from './menu';
-import RefreshButton from './refresh';
+import ShareButton from './share';
 
 class Top extends Component {
     state = {
@@ -18,14 +18,14 @@ class Top extends Component {
     render() {
         return (
             <View style={styles.top_container}>
-                <View style={{flex: 0.25, alignItems: 'center'}}>
+                <View style={{flex: 0.20, alignItems: 'center'}}>
                     <MenuButton menuClick={this.props.menuClick}/>
                 </View>
-                <View style={{flex: 0.50, alignItems: 'center'}}>
+                <View style={{flex: 0.60, alignItems: 'center'}}>
                     <Text style={styles.top_text}>{this.state.txt}</Text>
                 </View>
-                <View style={{flex: 0.25, alignItems: 'center'}}>
-                    <RefreshButton refreshClick={this.props.refreshClick}/>
+                <View style={{flex: 0.20, alignItems: 'center'}}>
+                    <ShareButton refreshClick={this.props.refreshClick}/>
                 </View>
             </View>
         );
