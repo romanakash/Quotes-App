@@ -52,7 +52,7 @@ const Font = ({ colors, font, onPress }) => (
     >
         <View style={styles.change_theme_container}>
             <Text style={[styles.quote_text, { fontFamily: font }]}>
-                {font}
+                The quick brown fox jumps over the lazy dog
             </Text>
             <TouchableOpacity onPress={onPress}>
                 <View style={styles.change_theme_button}>

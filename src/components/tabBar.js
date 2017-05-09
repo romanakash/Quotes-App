@@ -17,12 +17,13 @@ class TabBar extends Component {
     }
     render() {
         let { navigate } = this.props.navigation;
+        let iconSize = 31;
         return (
             <View style={styles.container}>
                 <TouchableOpacity onPress={() => navigate('Daily')}
                     style={[styles.button, { opacity: this.getStyles('Daily') }]}
                 >
-                    <MaterialIcon size={28}
+                    <MaterialIcon size={iconSize}
                         color="white"
                         name="update"
                     />
@@ -30,7 +31,7 @@ class TabBar extends Component {
                 <TouchableOpacity onPress={() => navigate('Quotes')}
                     style={[styles.button, { opacity: this.getStyles('Quotes') }]}
                 >
-                    <Ionicon size={28}
+                    <Ionicon size={iconSize}
                         color="white"
                         name="md-quote"
                     />
@@ -38,7 +39,7 @@ class TabBar extends Component {
                 <TouchableOpacity onPress={() => navigate('Saved')}
                     style={[styles.button, { opacity: this.getStyles('Saved') }]}
                 >
-                    <Ionicon size={28}
+                    <Ionicon size={iconSize}
                         color="white"
                         name="md-heart"
                     />
@@ -46,7 +47,7 @@ class TabBar extends Component {
                 <TouchableOpacity onPress={() => navigate('Settings')}
                     style={[styles.button, { opacity: this.getStyles('Settings') }]}
                 >
-                    <Ionicon size={28}
+                    <Ionicon size={iconSize}
                         color="white"
                         name="ios-menu"
                     />
@@ -58,17 +59,17 @@ class TabBar extends Component {
 
 const styles = {
     container: {
+        flex: 1,
         alignSelf: 'stretch',
         backgroundColor: 'rgba(0,0,0,0.1)',
-        height: 53,
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center'
     },
     button: {
+        flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        height: 53,
         width: 100,
     }
 }

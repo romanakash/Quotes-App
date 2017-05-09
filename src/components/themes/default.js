@@ -6,6 +6,7 @@ theme.add({
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'column',
+        paddingBottom: 50,
     },
     quote_text: {
         color: 'white',
@@ -13,7 +14,7 @@ theme.add({
         marginLeft: 10,
         marginRight: 10,
         textAlign: 'center',
-        textAlignVertical: 'center'
+        textAlignVertical: 'center',
     },
     author_text: {
         fontFamily: 'OpenSans-LightItalic',
@@ -40,11 +41,12 @@ theme.add({
         flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
     },
     top_text: {
         fontFamily: 'Quicksand-Light',
         color: 'white',
+        textAlign: 'center',
         fontSize: 20,
     },
     drawer_menu_container: {
@@ -76,6 +78,7 @@ theme.add({
         right: 0,
         bottom: 0,
         left: 0,
+        paddingBottom: 45,
         justifyContent: 'flex-end',
         alignItems: 'center',
     },
@@ -107,8 +110,7 @@ theme.add({
         borderRadius: 1
     },
     change_theme_container: {
-        width: 280,
-        height: 530,
+        flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
     },
@@ -116,7 +118,7 @@ theme.add({
         fontFamily: 'Code-Light',
         color: 'white',
         fontSize: 50,
-        margin: 15,
+        textAlign: 'center'
     },
     change_theme_button: {
         margin: 5,

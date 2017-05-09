@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text, ScrollView, RefreshControl } from 'react-native';
+import { View, Text, ScrollView, RefreshControl, Dimensions } from 'react-native';
 import { styles } from 'react-native-theme';
 import { ViewPager } from 'rn-viewpager';
 import PropTypes from 'prop-types';
-
 import Quote from './quote';
 import getFont from '../../themes/getFont';
 import getColor from '../../themes/getColor';
@@ -13,13 +12,12 @@ class QuoteSwiper extends Component {
         refreshing: false,
     }
     _onRefresh = (tagClick) => {
-        if (tagClick) {
-            this.props.onRefresh();
+        if (tagClick) {                     // if clicked from tag     
             this._swiper.setPageWithoutAnimation(0);
         }
         else {
             this.setState({ refreshing: true })
-            this.props.onRefresh();
+            this.props.getQuotes();
             this._swiper.setPage(0);
             setTimeout(() => this.setState({ refreshing: false }), 50)
         }
@@ -56,6 +54,8 @@ class QuoteSwiper extends Component {
     }
     render() {
         let colors = getColor();
+        let { height } = Dimensions.get('window');
+        height = height * 0.771;
         return (
             <View style={{flex: 1}}>
                 <ScrollView style={{flex: 1}}
@@ -72,7 +72,7 @@ class QuoteSwiper extends Component {
                     <ViewPager ref={ref => this._swiper = ref}
                         scrollEnabled={true}
                         removeClippedSubviews={true}
-                        style={{flex:1, height: 465, paddingBottom: 45}}
+                        style={{flex:1, height: height}}
                     >
                         { this.renderQuotes() }
                     </ViewPager>

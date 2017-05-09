@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-
+import Reactotron from 'reactotron-react-native';
 import Drawer from 'react-native-drawer';
 import QuoteSwiper from '../ui/quote/quoteSwiper';
 import Top from '../ui/top/top.js';
@@ -21,11 +21,11 @@ class QuoteScreen extends Component {
         this.getQuotes('All');
     }
     getQuotes = (tag) => {
-        if (tag === undefined) {
+        if (tag === undefined) {                // for refresh
             let ds = getData(this.state.tag);
             this.setState({ data: ds })
         }
-        else {
+        else {                                  // for tagclick
             let ds = getData(tag);
             this.setState({ data: ds })
         }
@@ -61,16 +61,19 @@ class QuoteScreen extends Component {
                                 tag={this.state.tag}
                             />
                         </View>
-                        <View style={{flex: 0.9}}>
+                        <View style={{flex: 0.8}}>
                             <QuoteSwiper
                                 ref={ref => this._quoteSwiper = ref}
                                 quotes={this.state.data}
-                                onRefresh={() => this.getQuotes(this.state.tag)}
+                                getQuotes={this.getQuotes}
                             />
+                        </View>
+                        <View style={{flex: 0.1}}>
+                            <TabBar navigation={this.props.navigation}/>
                         </View>
                     </View>
                 </Drawer>
-                <TabBar navigation={this.props.navigation}/>
+
             </Linear>
         );
     }

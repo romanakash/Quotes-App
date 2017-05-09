@@ -43,7 +43,7 @@ class SavedScreen extends Component {
     render() {
         return (
             <Linear>
-                <View style={{ flex: 1, marginTop: 15}}>
+                <View style={{ flex: 0.9, marginTop: 15}}>
                     <View style={{ paddingBottom: 10 }}>
                         <Text style={[styles.top_text, { textAlign: 'center', paddingRight: 10 }]}>
                             SAVED
@@ -51,7 +51,9 @@ class SavedScreen extends Component {
                     </View>
                     { this.renderSaved() }
                 </View>
-                <TabBar navigation={this.props.navigation}/>
+                <View style={{ flex: 0.1 }}>
+                    <TabBar navigation={this.props.navigation}/>
+                </View>
             </Linear>
         );
     }

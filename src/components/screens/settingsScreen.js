@@ -21,7 +21,7 @@ class SettingsScreen extends Component {
     render() {
         return (
             <Linear>
-                <View style={{ flex: 1, marginTop: 15}}>
+                <View style={{ flex: 0.9, marginTop: 15}}>
                     { this.renderHeader() }
                     <View style={{ marginTop: 35, marginLeft: 35, marginRight: 115 }}>
                         <ChangeTheme />
@@ -29,7 +29,9 @@ class SettingsScreen extends Component {
                         <ChangeNotify />
                     </View>
                 </View>
-                <TabBar navigation={this.props.navigation}/>
+                <View style={{ flex: 0.1 }}>
+                    <TabBar navigation={this.props.navigation}/>
+                </View>
             </Linear>
         );
     }

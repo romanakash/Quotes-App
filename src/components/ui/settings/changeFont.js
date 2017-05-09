@@ -24,7 +24,7 @@ class ChangeFont extends Component {
                 backdropOpacity={0.3}
                 animationIn="pulse"
                 animationOut="fadeOut"
-                style={{ margin: 50, marginLeft: 40, marginRight: 40 }}
+                style={{ flex: 1, margin: 50, marginLeft: 40, marginRight: 40 }}
             >
                 <FontSwiper onClose={this.onClose}/>
             </Modal>

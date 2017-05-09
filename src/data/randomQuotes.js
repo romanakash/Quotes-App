@@ -1,7 +1,8 @@
 import quotesRealm from '../realm/quotesRealm';
 import getRandomNum from './getRandomNum';
+import Reactotron from 'reactotron-react-native';
 
-const randomQuotes = (tagId = 0) => {
+const randomQuotes = (tagId) => {
     let quotes;
     if (tagId !== 0) {
        quotes = quotesRealm.objects('Quote').filtered(`tagId = ${tagId}`);

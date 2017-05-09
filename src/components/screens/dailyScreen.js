@@ -136,7 +136,7 @@ class DailyScreen extends Component {
         const maxDate = this.getMinAndMaxDates(false);
         return (
             <Linear>
-                <View style={{ flex: 1, marginTop: 25 }}>
+                <View style={{ flex: 0.9, marginTop: 25 }}>
                     { this.renderDay() }
                     { this.renderDate() }
                     { this.renderDaily() }
@@ -149,7 +149,9 @@ class DailyScreen extends Component {
                     onConfirm={this._handleDate}
                     onCancel={this._hidePicker}
                 />
-                <TabBar navigation={this.props.navigation}/>
+                <View style={{ flex: 0.1, marginTop: 25 }}>
+                    <TabBar navigation={this.props.navigation}/>
+                </View>
             </Linear>
         );
     }

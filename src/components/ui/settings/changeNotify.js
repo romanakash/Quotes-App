@@ -30,7 +30,7 @@ class ChangeNotify extends Component {
                     <Icon size={24} color="white" name="notifications" />
                     <Text style={styles.settings_text}>
                         Notification Time  {'\n'}
-                        {moment(getNotificationDate()).format('H : m')}
+                        {moment(getNotificationDate()).format('hh : mm')}
                     </Text>
                 </TouchableOpacity>
                 <DateTimePicker
