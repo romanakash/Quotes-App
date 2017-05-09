@@ -58,7 +58,6 @@ class QuoteScreen extends Component {
                         <View style={{flex: 0.1}}>
                             <Top
                                 menuClick={this._drawerChange}
-                                refreshClick={this._refreshChange}
                                 tag={this.state.tag}
                             />
                         </View>

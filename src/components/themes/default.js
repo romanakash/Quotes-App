@@ -6,8 +6,6 @@ theme.add({
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'column',
-        backgroundColor: 'transparent',
-        paddingBottom: 50
     },
     quote_text: {
         color: 'white',
@@ -78,7 +76,7 @@ theme.add({
         right: 0,
         bottom: 0,
         left: 0,
-        paddingTop: 380,
+        justifyContent: 'flex-end',
         alignItems: 'center',
     },
     date_container: {

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
 import { styles } from 'react-native-theme';
-import Reactotron from 'reactotron-react-native';
 
 import Linear from '../ui/linearGradient';
 import ChangeTheme from '../ui/settings/changeTheme';

@@ -64,7 +64,6 @@ class DailyScreen extends Component {
     }
     // Handles the date from DateTimePicker
     _handleDate = (date) => {
-        Reactotron.log(date)
         this.setState({ date: date })
         this.changeDaily();
         this._hidePicker();

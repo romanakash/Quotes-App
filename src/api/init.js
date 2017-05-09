@@ -3,7 +3,7 @@
 import { create } from 'apisauce';
 
 const api = create({
-    baseURL: 'http://10.0.2.2:8080'
+    baseURL: 'https://q-s.herokuapp.com/'
 })
 
 export default api;

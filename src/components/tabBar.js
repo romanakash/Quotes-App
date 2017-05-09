@@ -3,7 +3,6 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 import Ionicon from 'react-native-vector-icons/Ionicons';
 import PropTypes from 'prop-types';
-import Reactotron from 'reactotron-react-native';
 
 class TabBar extends Component {
     getStyles(button) {

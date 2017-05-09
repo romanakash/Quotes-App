@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableWithoutFeedback } from 'react-native';
+import { View, Text, TouchableWithoutFeedback, Share } from 'react-native';
 import { styles } from 'react-native-theme';
 import Icon from 'react-native-vector-icons/Ionicons';
 import * as Animatable from 'react-native-animatable';
@@ -12,7 +12,13 @@ import getFont from '../../themes/getFont';
 class Quote extends Component {
     state = {
         press: new Date().getTime(),
-        saved: this.props.saved
+        saved: false
+    }
+    componentDidMount() {
+        this.setState({ saved: this.props.saved })
+    }
+    componentWillReceiveProps() {
+        this.setState({ saved: this.props.saved })
     }
     _checkDoubleTap = () => {
         delta = new Date().getTime() - this.state.press;
@@ -38,6 +44,14 @@ class Quote extends Component {
         changeSaved(objId, save);               // changes realm
         this.setState({ saved: save })          // change local state
     }
+    _share = () => {
+        Share.share({
+            title: "Quotes Daily",
+            message: `${this.props.value} - ${this.props.authorName}
+            \n For more quotes download Quotes Daily from the play store
+            `
+        })
+    }
     renderHeart() {
         return (
             <Animatable.View ref={ref => this._heart = ref}
@@ -56,7 +70,10 @@ class Quote extends Component {
     renderQuote() {
         let font = getFont();
         return (
-            <TouchableWithoutFeedback onPress={this._checkDoubleTap}>
+            <TouchableWithoutFeedback
+                onPress={this._checkDoubleTap}
+                onLongPress={this._share}
+            >
                 <View style={styles.quote_container}>
                     <Text style={[styles.quote_text, { fontFamily: font }]}>
                         {this.props.value}

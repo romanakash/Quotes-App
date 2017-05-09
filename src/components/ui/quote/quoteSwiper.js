@@ -10,15 +10,19 @@ import getColor from '../../themes/getColor';
 
 class QuoteSwiper extends Component {
     state = {
-        refreshing: false
+        refreshing: false,
     }
     _onRefresh = (tagClick) => {
-        if (!tagClick) {
-            this.setState({ refreshing: true })
+        if (tagClick) {
+            this.props.onRefresh();
+            this._swiper.setPageWithoutAnimation(0);
         }
-        this.props.onRefresh();
-        this._swiper.setPage(0);
-        setTimeout(() => this.setState({ refreshing: false }), 50)
+        else {
+            this.setState({ refreshing: true })
+            this.props.onRefresh();
+            this._swiper.setPage(0);
+            setTimeout(() => this.setState({ refreshing: false }), 50)
+        }
     }
     renderQuotes() {
         if (this.props.quotes !== null) {
@@ -59,7 +63,7 @@ class QuoteSwiper extends Component {
                         <RefreshControl
                             refreshing={this.state.refreshing}
                             onRefresh={this._onRefresh}
-                            colors={[colors[0]]}
+                            colors={colors}
                             progressBackgroundColor="white"
                             tintColor="transparent"
                             progressViewOffset={1}
@@ -68,7 +72,7 @@ class QuoteSwiper extends Component {
                     <ViewPager ref={ref => this._swiper = ref}
                         scrollEnabled={true}
                         removeClippedSubviews={true}
-                        style={{flex:1, height: 465 }}
+                        style={{flex:1, height: 465, paddingBottom: 45}}
                     >
                         { this.renderQuotes() }
                     </ViewPager>

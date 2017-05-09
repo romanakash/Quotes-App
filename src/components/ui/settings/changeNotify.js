@@ -3,7 +3,6 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import { styles } from 'react-native-theme';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import DateTimePicker from 'react-native-modal-datetime-picker';
-import Reactotron from 'reactotron-react-native';
 import moment from 'moment';
 
 import getNotificationDate from '../../../data/getNotificationDate';

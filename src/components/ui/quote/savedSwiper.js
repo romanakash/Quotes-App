@@ -27,7 +27,7 @@ class SavedSwiper extends Component {
     }
     render() {
         return (
-            <ViewPager style={{flex:1}}>
+            <ViewPager style={{flex:1, marginBottom: 45 }}>
                 { this.renderSaved() }
             </ViewPager>
         );
