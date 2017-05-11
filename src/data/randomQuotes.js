@@ -1,6 +1,5 @@
 import quotesRealm from '../realm/quotesRealm';
 import getRandomNum from './getRandomNum';
-import Reactotron from 'reactotron-react-native';
 
 const randomQuotes = (tagId) => {
     let quotes;

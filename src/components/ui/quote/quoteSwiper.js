@@ -12,7 +12,7 @@ class QuoteSwiper extends Component {
         refreshing: false,
     }
     _onRefresh = (tagClick) => {
-        if (tagClick) {                     // if clicked from tag     
+        if (tagClick) {                     // if clicked from tag
             this._swiper.setPageWithoutAnimation(0);
         }
         else {
@@ -55,7 +55,7 @@ class QuoteSwiper extends Component {
     render() {
         let colors = getColor();
         let { height } = Dimensions.get('window');
-        height = height * 0.771;
+        height = height * 0.76;
         return (
             <View style={{flex: 1}}>
                 <ScrollView style={{flex: 1}}
@@ -84,7 +84,7 @@ class QuoteSwiper extends Component {
 }
 
 QuoteSwiper.propTypes = {
-    quotes: PropTypes.array,
+    quotes: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
 }
 
 export default QuoteSwiper;

@@ -7,7 +7,7 @@ import tagsDict from '../../../data/tags'
 
 class DrawerMenu extends Component {
     renderCategories() {
-        let array = Object.values(tagsDict).sort();   // obj => array
+        const array = Object.values(tagsDict).sort();   // obj => array
         return (
             array.map((tag, index) =>
                 <TouchableOpacity

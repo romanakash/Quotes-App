@@ -1,26 +1,22 @@
-import React, { Component } from 'react';
-import { Alert, Share } from 'react-native';
+import React from 'react';
+import { View } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import PropTypes from 'prop-types';
 
-class SearchButton extends Component {
-    render() {
-        return (
-            <Icon.Button
-                name="search"
-                color="white"
-                size={25}
-                backgroundColor="transparent"
-                onPress={() => {}}
-                iconStyle={{marginRight: 0}}
-            />
-        );
-    }
-}
+const SearchButton = ({ searchClick }) => (
+    <Icon.Button
+        name="search"
+        color="white"
+        size={25}
+        backgroundColor="transparent"
+        onPress={searchClick}
+        iconStyle={{ marginRight: 0, paddingTop: 5 }}
+    />
+);
+
 
 SearchButton.propTypes = {
-    value: PropTypes.string,
-    authorName: PropTypes.string
+    searchClick: PropTypes.func
 }
 
 export default SearchButton;

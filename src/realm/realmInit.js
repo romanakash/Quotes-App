@@ -7,6 +7,7 @@ import './quotesRealm'; // defines schema and inits quotesRealm
 
 import quotesRealm from '../realm/quotesRealm';
 import getInitialQuotes from '../api/getInitialQuotes';
+import getAuthorNames from '../api/getAuthorNames';
 import getDailyQuotes from '../api/getDailyQuotes';
 import seedSettings from './seed/seedSettings';
 import checkForNewMonth from './checkForNewMonth';
@@ -15,6 +16,10 @@ import initNotifications from '../initNotifications';
 let quotes = quotesRealm.objects('Quote');           // seed quotes
 if (quotes.length < 1) {
     getInitialQuotes();
+}
+let authorNames = quotesRealm.objects('AuthorNames');
+if (authorNames.length < 1) {
+    getAuthorNames();
 }
 
 let daily = quotesRealm.objects('Daily');            // seed dailies

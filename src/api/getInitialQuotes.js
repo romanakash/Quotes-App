@@ -10,12 +10,10 @@ const getInitialQuotes = () => {
     api
         .get('/quotes')
         .then((res) => {
-            console.log(res);
             if (res.data !== null) {
                 seedData(res.data)
             }
         })
-        .then(() => console.log("Seed Completed"))
         .catch(err => console.error(err))
 }
 

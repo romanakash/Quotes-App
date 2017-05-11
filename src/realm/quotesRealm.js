@@ -12,6 +12,14 @@ const Quote = {
     },
 }
 
+// Array for search bar results
+const AuthorNames = {
+    name: 'AuthorNames',
+    properties: {
+        name: { type: 'string' }
+    }
+}
+
 const DailyQuotes = {
     name: 'Daily',
     properties: {
@@ -44,5 +52,5 @@ const Settings = {
     }
 }
 
-let quotesRealm = new Realm({schema: [Quote, DailyQuotes, Gradient, Settings], schemaVersion: 7});
+let quotesRealm = new Realm({schema: [Quote, AuthorNames, DailyQuotes, Gradient, Settings], schemaVersion: 1});
 export default quotesRealm;
