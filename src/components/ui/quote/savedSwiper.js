@@ -4,12 +4,11 @@ import { styles } from 'react-native-theme';
 import { ViewPager } from 'rn-viewpager';
 import PropTypes from 'prop-types';
 
-import getFont from '../../themes/getFont';
 import Quote from '../../ui/quote/quote';
+import getFont from '../../themes/getFont';
 
 class SavedSwiper extends Component {
-    renderSaved() {
-        let font = getFont();
+    renderSaved(font) {
         return (
             this.props.savedQuotes.map((obj, index) =>
                 <View style={{flex:1}} key={index}>
@@ -26,12 +25,17 @@ class SavedSwiper extends Component {
         );
     }
     render() {
+        let font = getFont();
         return (
             <ViewPager style={{flex:1}}>
-                { this.renderSaved() }
+                { this.renderSaved(font) }
             </ViewPager>
         );
     }
+}
+
+SavedSwiper.PropTypes = {
+    savedQuotes: PropTypes.obj,
 }
 
 export default SavedSwiper;

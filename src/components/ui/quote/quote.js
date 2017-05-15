@@ -7,7 +7,6 @@ import PropTypes from 'prop-types';
 
 import Author from './author';
 import changeSaved from '../../../realm/updates/changeSaved';
-import getFont from '../../themes/getFont';
 
 class Quote extends Component {
     state = {
@@ -67,15 +66,14 @@ class Quote extends Component {
             </Animatable.View>
         );
     }
-    renderQuote() {
-        let font = getFont();
+    renderQuote() {;
         return (
             <TouchableWithoutFeedback
                 onPress={this._checkDoubleTap}
                 onLongPress={this._share}
             >
                 <View style={styles.quote_container}>
-                    <Text style={[styles.quote_text, { fontFamily: font }]}>
+                    <Text style={[styles.quote_text, { fontFamily: this.props.font }]}>
                         {this.props.value}
                     </Text>
                     <Author name={this.props.authorName} />
@@ -98,6 +96,7 @@ Quote.propTypes = {
     value: PropTypes.string,
     authorName: PropTypes.string,
     saved: PropTypes.bool,
+    font: PropTypes.string
 }
 
 export default Quote;

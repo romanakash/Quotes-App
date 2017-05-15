@@ -23,13 +23,12 @@ class SavedScreen extends Component {
             return (
                 <SavedSwiper
                     savedQuotes={this.state.data}
-                    isSavedScreen={true}
                 />
             );
         }
         else {
             return (
-                <View style={[styles.quote_container,{ paddingBottom: 45 }]}>
+                <View style={styles.quote_container}>
                     <Text style={[styles.quote_text, { fontFamily: getFont() }]}>
                         You have no Saved Quotes
                     </Text>

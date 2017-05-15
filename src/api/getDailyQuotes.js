@@ -14,7 +14,6 @@ const getDailyQuotes = () => {
                 return null
             }
         })
-        .catch(err => console.log(err))
 }
 
 export default getDailyQuotes;

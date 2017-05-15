@@ -40,6 +40,6 @@ class Linear extends Component {
             </LinearGradient>
         );
     }
-};
+}
 
 export default Linear;

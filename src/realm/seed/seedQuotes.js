@@ -6,7 +6,7 @@ import quotesRealm from '../quotesRealm';
 
 const seedData = (bin) => {
     quotesRealm.write(() => {
-        for (item of bin) {
+        for (let item of bin) {
             quotesRealm.create('Quote', {
                 id: item._id,
                 value: item.value,

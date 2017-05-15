@@ -48,9 +48,12 @@ const Settings = {
         quoteFamily: 'string',
         notificationTime: 'string',
         month: 'int',
-        gradients: 'Gradient',
+        gradients: 'Gradient'
     }
 }
 
-let quotesRealm = new Realm({schema: [Quote, AuthorNames, DailyQuotes, Gradient, Settings], schemaVersion: 1});
+let quotesRealm = new Realm({
+    schema: [Quote, AuthorNames, DailyQuotes, Gradient, Settings],
+    schemaVersion: 1
+});
 export default quotesRealm;

@@ -4,6 +4,7 @@ import { styles } from 'react-native-theme';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import DateTimePicker from 'react-native-modal-datetime-picker';
 import moment from 'moment';
+import PropTypes from 'prop-types';
 
 import Linear from '../ui/linearGradient';
 import TabBar from '../tabBar';
@@ -35,7 +36,7 @@ class DailyScreen extends Component {
         let { data, date } = this.state;
         const formatDate = moment(date).format('DD-MM-YY');
         if (data !== undefined) {
-            for (obj of data) {
+            for (let obj of data) {
                 if (obj.creationDate === formatDate) {
                     this.setState({
                         daily: {
@@ -122,10 +123,10 @@ class DailyScreen extends Component {
             return (
                 <View style={{ flex: 0.5, paddingTop: 65 }}>
                     <Text style={[styles.quote_text, { fontFamily: font }]}>
-                        We don't have a Quote for this day
+                        We do not have a Quote for this day
                     </Text>
                     <Text style={[styles.author_text, { paddingTop: 25 }]}>
-                        Sorry
+                        Sorry, Maybe its your internet connection
                     </Text>
                 </View>
             );
@@ -155,6 +156,10 @@ class DailyScreen extends Component {
             </Linear>
         );
     }
+}
+
+DailyScreen.propTypes = {
+    navigation: PropTypes.object
 }
 
 export default DailyScreen;

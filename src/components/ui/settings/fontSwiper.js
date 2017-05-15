@@ -24,7 +24,7 @@ class FontSwiper extends Component {
     }
     _renderDotIndicator() {
        return (
-           <PagerDotIndicator pageCount={14}
+           <PagerDotIndicator pageCount={15}
                dotStyle={styles.settings_pagination}
                selectedDotStyle={[styles.settings_pagination, {
                    backgroundColor: 'white'

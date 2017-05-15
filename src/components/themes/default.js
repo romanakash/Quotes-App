@@ -93,12 +93,19 @@ theme.add({
         height: 35,
         borderRadius: 25
     },
+    settings_container: {
+        justifyContent: 'center',
+        borderBottomColor: 'rgba(255,255,255,0.3)',
+        borderBottomWidth: 0.8,
+    },
     settings_text: {
-        fontFamily: 'Oxygen-Light',
+        padding: 3,
+        fontFamily: 'Quicksand-Light',
         color: 'white',
         fontSize: 20,
         textAlign: 'left',
-        paddingLeft: 15
+        paddingBottom: 5,
+        paddingLeft: 10
     },
     settings_pagination: {
         backgroundColor: 'rgba(255,255,255,0.15)',

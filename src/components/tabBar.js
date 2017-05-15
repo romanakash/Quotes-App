@@ -5,22 +5,27 @@ import Ionicon from 'react-native-vector-icons/Ionicons';
 import PropTypes from 'prop-types';
 
 class TabBar extends Component {
-    getStyles(button) {
+    state = {
+        screen: null
+    }
+    componentWillMount() {
         let { state } = this.props.navigation;
         let route = state.routeName;
-        if (button === route) {
-            return 1
-        }
-        else {
-            return 0.6
-        }
+        this.setState({ screen: route })
+    }
+    getStyles(button) {
+        let opacity = button === this.state.screen ? 1 : 0.6
+        return opacity;
+    }
+    _handleClick = (name) => {
+        let { navigate } = this.props.navigation;
+        this.state.screen === name ? null : navigate(name)
     }
     render() {
-        let { navigate } = this.props.navigation;
         let iconSize = 31;
         return (
             <View style={styles.container}>
-                <TouchableOpacity onPress={() => navigate('Daily')}
+                <TouchableOpacity onPress={() => this._handleClick('Daily')}
                     style={[styles.button, { opacity: this.getStyles('Daily') }]}
                 >
                     <MaterialIcon size={iconSize}
@@ -28,7 +33,7 @@ class TabBar extends Component {
                         name="update"
                     />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigate('Quotes')}
+                <TouchableOpacity onPress={() => this._handleClick('Quotes')}
                     style={[styles.button, { opacity: this.getStyles('Quotes') }]}
                 >
                     <Ionicon size={iconSize}
@@ -36,7 +41,7 @@ class TabBar extends Component {
                         name="md-quote"
                     />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigate('Saved')}
+                <TouchableOpacity onPress={() => this._handleClick('Saved')}
                     style={[styles.button, { opacity: this.getStyles('Saved') }]}
                 >
                     <Ionicon size={iconSize}
@@ -44,7 +49,7 @@ class TabBar extends Component {
                         name="md-heart"
                     />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigate('Settings')}
+                <TouchableOpacity onPress={() => this._handleClick('Settings')}
                     style={[styles.button, { opacity: this.getStyles('Settings') }]}
                 >
                     <Ionicon size={iconSize}

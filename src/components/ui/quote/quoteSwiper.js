@@ -3,9 +3,8 @@ import { View, Text, ScrollView, RefreshControl, Dimensions } from 'react-native
 import { styles } from 'react-native-theme';
 import { ViewPager } from 'rn-viewpager';
 import PropTypes from 'prop-types';
+
 import Quote from './quote';
-import getFont from '../../themes/getFont';
-import getColor from '../../themes/getColor';
 
 class QuoteSwiper extends Component {
     state = {
@@ -33,16 +32,16 @@ class QuoteSwiper extends Component {
                             value={obj.value}
                             authorName={obj.author}
                             saved={obj.saved}
+                            font={this.props.font}
                         />
                     </View>
                 )
             );
         }
         else {
-            let font = getFont();
             return (
                 <View style={styles.quote_container}>
-                    <Text style={[styles.quote_text, { fontFamily: font }]}>
+                    <Text style={[styles.quote_text, { fontFamily: this.props.font }]}>
                         Error 404
                     </Text>
                     <Text style={styles.author_text}>
@@ -53,9 +52,9 @@ class QuoteSwiper extends Component {
         }
     }
     render() {
-        let colors = getColor();
         let { height } = Dimensions.get('window');
         height = height * 0.76;
+        let key = this.props.quotes === null ?  30 : this.props.quotes.length
         return (
             <View style={{flex: 1}}>
                 <ScrollView style={{flex: 1}}
@@ -63,15 +62,16 @@ class QuoteSwiper extends Component {
                         <RefreshControl
                             refreshing={this.state.refreshing}
                             onRefresh={this._onRefresh}
-                            colors={colors}
+                            colors={this.props.colors}
                             progressBackgroundColor="white"
                             tintColor="transparent"
                             progressViewOffset={1}
                         />}
                 >
                     <ViewPager ref={ref => this._swiper = ref}
+                        key={key}
                         scrollEnabled={true}
-                        removeClippedSubviews={true}
+                        removeClippedSubviews={false}
                         style={{flex:1, height: height}}
                     >
                         { this.renderQuotes() }
@@ -85,6 +85,9 @@ class QuoteSwiper extends Component {
 
 QuoteSwiper.propTypes = {
     quotes: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+    getQuotes: PropTypes.func,
+    colors: PropTypes.array,
+    font: PropTypes.string
 }
 
 export default QuoteSwiper;

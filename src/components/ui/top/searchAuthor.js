@@ -4,13 +4,12 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import { debounce } from 'lodash/function';
 import Fuse from 'fuse.js';
 import * as Animatable from 'react-native-animatable';
-import Reactotron from 'reactotron-react-native';
+import PropTypes from 'prop-types';
+
 import getSearchData from '../../../data/getSearchData';
-import getColor from '../../themes/getColor';
 
 const INITIAL_TOP = -60;
 const ANIMATION_DURATION = 300;
-const color = getColor()[0]
 const data = getSearchData();
 
 class SearchAuthor extends Component {
@@ -90,7 +89,7 @@ class SearchAuthor extends Component {
                 <Icon
                    name='arrow-back'
                    size={28}
-                   style={styles.arrow}
+                   style={{color: this.props.color, padding: 10}}
                 />
             </TouchableOpacity>
         );
@@ -100,7 +99,7 @@ class SearchAuthor extends Component {
             <TextInput
                 ref={(ref) => this.textInput = ref}
                 onLayout={() => this.textInput.focus()}
-                style={styles.input}
+                style={[styles.input, { color: this.props.color }]}
                 onChangeText={(input) => this._onChangeText(input)}
                 onSubmitEditing={null}
                 onFocus={null}
@@ -125,7 +124,7 @@ class SearchAuthor extends Component {
                     name={'close'}
                     size={28}
                     style={{
-                        color: this.state.input == '' ? "white" : color
+                        color: this.state.input == '' ? "white" : this.props.color
                     }}
                 />
             </TouchableOpacity>
@@ -134,7 +133,6 @@ class SearchAuthor extends Component {
     renderBox() {
         let { input, recent, authors } = this.state;
         let array = input === "" ? recent : authors
-        Reactotron.log(data)
         return (
             <Animatable.View ref={ref => this._box = ref}
                 style={styles.box}
@@ -145,7 +143,7 @@ class SearchAuthor extends Component {
                         <TouchableOpacity onPress={() => this._authorSelect(author)}
                             key={index} style={styles.touchable}
                         >
-                            <Text style={styles.text}>
+                            <Text style={[styles.text, { color: this.props.color }]}>
                                 {author}
                             </Text>
                         </TouchableOpacity>
@@ -199,14 +197,9 @@ const styles = {
         alignItems: 'center',
         height: 52
     },
-    arrow: {
-        color: color,
-        padding: 10
-    },
     input: {
         height: 60,
         fontSize: 20,
-        color: color,
         fontFamily: 'Quicksand-Regular',
         width: Dimensions.get('window').width - 120,
     },
@@ -225,11 +218,15 @@ const styles = {
         padding: 8,
     },
     text: {
-        color: color,
         fontSize: 18,
         fontFamily: 'Helvectica-Nueue',
         textAlignVertical: 'center'
     }
+}
+
+SearchAuthor.propTypes = {
+    color: PropTypes.string,
+    getOnAuthorSelect: PropTypes.func
 }
 
 export default SearchAuthor

@@ -14,7 +14,6 @@ const getInitialQuotes = () => {
                 seedData(res.data)
             }
         })
-        .catch(err => console.error(err))
 }
 
 export default getInitialQuotes;

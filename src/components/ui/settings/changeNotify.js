@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text } from 'react-native';
 import { styles } from 'react-native-theme';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import DateTimePicker from 'react-native-modal-datetime-picker';
@@ -23,16 +23,19 @@ class ChangeNotify extends Component {
     }
     render() {
         return (
-            <View>
-                <TouchableOpacity onPress={this._showPicker}
-                    style={{marginBottom: 25, flexDirection: 'row'}}
+            <View style={styles.settings_container}>
+                <Icon.Button size={24}
+                    color="white"
+                    name="notifications"
+                    onPress={this._showPicker}
+                    backgroundColor="transparent"
+                    iconStyle={{marginRight: 5}}
                 >
-                    <Icon size={24} color="white" name="notifications" />
                     <Text style={styles.settings_text}>
-                        Notification Time  {'\n'}
+                        Notification Time {'\t'}
                         {moment(getNotificationDate()).format('hh : mm')}
                     </Text>
-                </TouchableOpacity>
+                </Icon.Button>
                 <DateTimePicker
                     mode='time'
                     isVisible={this.state.picker}

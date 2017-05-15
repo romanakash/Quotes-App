@@ -8,9 +8,12 @@ import Top from '../ui/top/top.js';
 import DrawerMenu from '../ui/drawer/drawerMenu';
 import Linear from '../ui/linearGradient';
 import TabBar from '../tabBar';
+
 import getData from '../../data/getData';
 import getQuotesByAuthor from '../../data/getQuotesByAuthor';
 import tagsDict from '../../data/tags';
+import getColor from '../themes/getColor';
+import getFont from '../themes/getFont';
 
 const tags = Object.values(tagsDict);
 
@@ -53,13 +56,14 @@ class QuoteScreen extends Component {
         this.state.drawer ? this._drawer.close() : this._drawer.open();
     }
     render() {
+        let colors = getColor();
         return (
             <Linear>
                 <Drawer ref={ref => this._drawer = ref}
                     content={<DrawerMenu tagClick={this._tagClick} />}
                     type="overlay"
                     tapToClose={true}
-                    openDrawerOffset={(viewport) => viewport.width - 300}
+                    openDrawerOffset={(viewport) => viewport.width - 250}
                     tweenHandler={(ratio) => ({
                         main: { opacity:(4-(ratio*3.35))/4 }
                     })}
@@ -71,6 +75,7 @@ class QuoteScreen extends Component {
                             <Top getOnAuthorSelect={this.getOnAuthorSelect}
                                 menuClick={this._drawerChange}
                                 tag={this.state.tag}
+                                colors={colors}
                             />
                         </View>
                         <View style={{flex: 0.8}}>
@@ -78,6 +83,8 @@ class QuoteScreen extends Component {
                                 ref={ref => this._quoteSwiper = ref}
                                 quotes={this.state.data}
                                 getQuotes={this.getQuotes}
+                                colors={colors}
+                                font={getFont()}
                             />
                         </View>
                         <View style={{flex: 0.1}}>
@@ -85,7 +92,6 @@ class QuoteScreen extends Component {
                         </View>
                     </View>
                 </Drawer>
-
             </Linear>
         );
     }

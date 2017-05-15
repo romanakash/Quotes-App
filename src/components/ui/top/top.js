@@ -23,6 +23,7 @@ class Top extends Component {
         return (
             <View style={styles.top_container}>
                 <SearchAuthor ref={ref => this._searchAuthor = ref}
+                    color={this.props.colors[0]}
                     getOnAuthorSelect={this.props.getOnAuthorSelect}
                 />
                 <View style={{flex: 0.20, alignItems: 'center'}}>
@@ -43,7 +44,8 @@ Top.propTypes = {
     tag: PropTypes.string,
     menuClick: PropTypes.func,
     refreshClick: PropTypes.func,
-    getOnAuthorSelect: PropTypes.func
+    getOnAuthorSelect: PropTypes.func,
+    colors: PropTypes.array
 }
 
 export default Top;

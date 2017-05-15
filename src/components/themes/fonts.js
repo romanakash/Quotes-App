@@ -16,7 +16,8 @@ const fonts = [
     'BebasNeue Regular',
     'Sansita-Regular',
     'Oswald-Regular',
-    'PT-Sans'
+    'PT-Sans',
+    'Myriad-Light'
 ];
 
 export default fonts;

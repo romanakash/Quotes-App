@@ -9,7 +9,6 @@ const getAuthorNames = () => {
                 seedAuthorNames(res.data)
             }
         })
-        .catch(err => console.error(err))
 }
 
 export default getAuthorNames;
