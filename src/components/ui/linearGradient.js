@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StatusBar } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import PropTypes from 'prop-types';
 
 import quotesRealm from '../../realm/quotesRealm';
 
@@ -30,8 +31,9 @@ class Linear extends Component {
             <LinearGradient
                 colors={this.state.colors}
                 style={{flex: 1}}
-                start={{ x: 0.25, y: 0.25 }}
-                end={{ x: 1, y: 1 }}
+                start={{ x: 0.1, y: 0.1 }}
+                end={{ x: 1, y: 0.8 }}
+                locations={[0.1, 1]}
             >
                 <StatusBar
                     backgroundColor={this.state.colors[0]}
@@ -40,6 +42,10 @@ class Linear extends Component {
             </LinearGradient>
         );
     }
+}
+
+Linear.propTypes = {
+    children: PropTypes.any
 }
 
 export default Linear;

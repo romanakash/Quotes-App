@@ -18,7 +18,7 @@ const AppNavigator = StackNavigator({
     Settings: { screen: SettingsScreen }
 },
 {
-    initialRouteName: 'Settings',
+    initialRouteName: 'Daily',
     headerMode: 'none',
 })
 

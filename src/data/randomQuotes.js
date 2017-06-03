@@ -12,10 +12,10 @@ const randomQuotes = (tagId) => {
     if (quotes.length !== 0) {
         let array = [];
         let nums = [];
-        for (var i = 0; i < 10; i++) {
+        for (var i = 0; i < 20; i++) {
                let randomNum = 0;
                do {
-        	        randomNum = getRandomNum(0, quotes.length - 1);
+                   randomNum = getRandomNum(0, quotes.length - 1);
             } while(nums.includes(randomNum));
             nums.push(randomNum)
             array.push(quotes[randomNum]);

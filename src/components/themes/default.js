@@ -47,6 +47,7 @@ theme.add({
         fontFamily: 'Quicksand-Light',
         color: 'white',
         textAlign: 'center',
+        textAlignVertical: 'center',
         fontSize: 20,
     },
     drawer_menu_container: {
@@ -125,7 +126,9 @@ theme.add({
         fontFamily: 'Code-Light',
         color: 'white',
         fontSize: 50,
-        textAlign: 'center'
+        textAlign: 'center',
+        marginLeft: 10,
+        marginRight: 10,
     },
     change_theme_button: {
         margin: 5,
