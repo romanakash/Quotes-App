@@ -2,14 +2,16 @@ import React, { Component } from 'react';
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { styles } from 'react-native-theme';
 import PropTypes from 'prop-types';
+import _ from 'lodash';
 
-import tagsDict from '../../../data/tags'
+import tags from '../../../data/tags'
+
+const tagSorted = tags.sort();
 
 class DrawerMenu extends Component {
     renderCategories() {
-        const array = Object.values(tagsDict).sort();   // obj => array
         return (
-            array.map((tag, index) =>
+            tagSorted.map((tag, index) =>
                 <TouchableOpacity
                     key={index + 100}
                     onPress={() => this.props.tagClick(tag)}

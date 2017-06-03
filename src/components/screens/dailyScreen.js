@@ -28,17 +28,18 @@ class DailyScreen extends Component {
     }
     componentDidMount() {
         if (this.state.data !== undefined && this.state.data.length > 0) {
-            this.changeDaily(this.state.date);
+            this.changeDaily();
         }
     }
     // Changes the daily quote according to this.state.date
     changeDaily() {
         let { data, date } = this.state;
-        const formatDate = moment(date).format('DD-MM-YY');
+        let num = moment(date).format("DD");
         if (data !== undefined) {
             for (let obj of data) {
-                if (obj.creationDate === formatDate) {
-                    this.setState({
+                let d = moment(obj.date).format("DD");
+                if (d === num) {
+                    return this.setState({
                         daily: {
                             day: obj.day,
                             value: obj.value,
@@ -47,9 +48,7 @@ class DailyScreen extends Component {
                     })
                 }
             }
-        }
-        else {
-            this.setState({ daily: null })
+            return this.setState({ daily: null })
         }
     }
     getMinAndMaxDates(first) {

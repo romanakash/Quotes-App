@@ -11,11 +11,9 @@ import TabBar from '../tabBar';
 
 import getData from '../../data/getData';
 import getQuotesByAuthor from '../../data/getQuotesByAuthor';
-import tagsDict from '../../data/tags';
+import tags from '../../data/tags';
 import getColor from '../themes/getColor';
 import getFont from '../themes/getFont';
-
-const tags = Object.values(tagsDict);
 
 class QuoteScreen extends Component {
     state = {
@@ -65,7 +63,7 @@ class QuoteScreen extends Component {
                     tapToClose={true}
                     openDrawerOffset={(viewport) => viewport.width - 250}
                     tweenHandler={(ratio) => ({
-                        main: { opacity:(4-(ratio*3.35))/4 }
+                        main: { opacity:(4-(ratio*3.8))/4 }
                     })}
                     tweenDuration={500}
                     tweenEasing="easeInOutSine"

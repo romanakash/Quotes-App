@@ -26,4 +26,8 @@ const tagsDict = {
     '24': 'Literature'
 }
 
-export default tagsDict;
+import _ from 'lodash';
+
+let tags = _.values(tagsDict)
+
+export default tags;

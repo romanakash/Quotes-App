@@ -47,12 +47,14 @@ theme.add({
         fontFamily: 'Quicksand-Light',
         color: 'white',
         textAlign: 'center',
+        textAlignVertical: 'center',
         fontSize: 20,
     },
     drawer_menu_container: {
+        flex: 1,
         flexDirection: 'column',
         paddingTop: 18,
-        backgroundColor: 'rgba(56,59,83,0.3)',
+        backgroundColor: 'rgba(56,59,83,0.1)',
     },
     drawer_menu_touchable: {
         backgroundColor: 'transparent',
@@ -125,7 +127,9 @@ theme.add({
         fontFamily: 'Code-Light',
         color: 'white',
         fontSize: 50,
-        textAlign: 'center'
+        textAlign: 'center',
+        marginLeft: 10,
+        marginRight: 10,
     },
     change_theme_button: {
         margin: 5,

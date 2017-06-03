@@ -1,16 +1,19 @@
 import quotesRealm from '../quotesRealm';
 
 const seedDaily = (bin) => {
+    let result = quotesRealm.objects('Daily').snapshot();
+    quotesRealm.write(() => {
+        quotesRealm.delete(result);
+    })
     if (bin !== null) {
         quotesRealm.write(() => {
-            for (item of bin) {
+            for (let item of bin) {
                 quotesRealm.create('Daily', {
                     id: item._id,
                     value: item.value,
                     author: item.author,
-                    tagId: item.tagId,
                     day: item.day,
-                    creationDate: item.creationDate,
+                    date: item.date,
                 });
             }
         });

@@ -1,4 +1,4 @@
-import tagsDict from './tags';
+import tags from './tags';
 import randomQuotes from './randomQuotes';
 
 const getData = (tag) => {
@@ -7,8 +7,8 @@ const getData = (tag) => {
         return randomQuotes(tagId)
     }
     else {
-        let values = Object.values(tagsDict);
-        for (value of values) {
+        let values = tags;
+        for (let value of values) {
             if (value === tag) {
                 tagId = values.indexOf(value);
             }

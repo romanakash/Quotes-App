@@ -26,9 +26,8 @@ const DailyQuotes = {
         id: 'string',
         value: 'string',
         author: 'string',
-        tagId: 'int',
         day: 'string',
-        creationDate: 'string',
+        date: 'string',
     },
 }
 
