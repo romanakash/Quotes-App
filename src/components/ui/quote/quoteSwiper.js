@@ -54,7 +54,6 @@ class QuoteSwiper extends Component {
     render() {
         let { height } = Dimensions.get('window');
         height = height * 0.76;
-        let key = this.props.quotes === null ?  30 : this.props.quotes.length
         return (
             <View style={{flex: 1}}>
                 <ScrollView style={{flex: 1}}
@@ -69,10 +68,9 @@ class QuoteSwiper extends Component {
                         />}
                 >
                     <ViewPager ref={ref => this._swiper = ref}
-                        key={key}
-                        scrollEnabled={true}
+                        key={1}
                         removeClippedSubviews={false}
-                        style={{flex:1, height: height}}
+                        style={{flex:1, height}}
                     >
                         { this.renderQuotes() }
                     </ViewPager>

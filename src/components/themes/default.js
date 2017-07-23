@@ -6,7 +6,7 @@ theme.add({
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'column',
-        paddingBottom: 50,
+        paddingBottom: 50
     },
     quote_text: {
         color: 'white',
