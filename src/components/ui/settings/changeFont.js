@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { styles } from 'react-native-theme';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Modal from 'react-native-modal';
@@ -36,13 +36,14 @@ class ChangeFont extends Component {
                 <Icon.Button size={24}
                     color="white"
                     name="text-fields"
-                    onPress={this._showModal}
                     backgroundColor="transparent"
                     iconStyle={{marginRight: 5}}
                 >
-                    <Text style={styles.settings_text}>
-                        Change Font
-                    </Text>
+                    <TouchableOpacity onPress={this._showModal}>
+                        <Text style={styles.settings_text}>
+                            Change Font
+                        </Text>
+                    </TouchableOpacity>
                 </Icon.Button>
                 { this.renderModal() }
             </View>

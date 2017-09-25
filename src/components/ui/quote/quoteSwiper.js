@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, ScrollView, RefreshControl, Dimensions } from 'react-native';
+import { View, Text, ScrollView, RefreshControl, ViewPagerAndroid } from 'react-native';
 import { styles } from 'react-native-theme';
-import { ViewPager } from 'rn-viewpager';
 import PropTypes from 'prop-types';
 
 import Quote from './quote';
@@ -52,31 +51,26 @@ class QuoteSwiper extends Component {
         }
     }
     render() {
-        let { height } = Dimensions.get('window');
-        height = height * 0.76;
         return (
-            <View style={{flex: 1}}>
-                <ScrollView style={{flex: 1}}
-                    refreshControl={
-                        <RefreshControl
-                            refreshing={this.state.refreshing}
-                            onRefresh={this._onRefresh}
-                            colors={this.props.colors}
-                            progressBackgroundColor="white"
-                            tintColor="transparent"
-                            progressViewOffset={1}
-                        />}
+            <ScrollView style={{flex: 1}}
+                contentContainerStyle={{ flex: 1 }}
+                refreshControl={
+                    <RefreshControl
+                        refreshing={this.state.refreshing}
+                        onRefresh={this._onRefresh}
+                        colors={this.props.colors}
+                        progressBackgroundColor="white"
+                        tintColor="transparent"
+                        progressViewOffset={1}
+                    />}
+            >
+                <ViewPagerAndroid ref={ref => this._swiper = ref}
+                    style={{flex: 1}}
+                    keyboardDismissMode="on-drag"
                 >
-                    <ViewPager ref={ref => this._swiper = ref}
-                        key={1}
-                        removeClippedSubviews={false}
-                        style={{flex:1, height}}
-                    >
-                        { this.renderQuotes() }
-                    </ViewPager>
-                </ScrollView>
-
-            </View>
+                    { this.renderQuotes() }
+                </ViewPagerAndroid>
+            </ScrollView>
         );
     }
 }

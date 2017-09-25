@@ -36,13 +36,14 @@ class ChangeTheme extends Component {
                 <Icon.Button size={24}
                     color="white"
                     name="md-color-fill"
-                    onPress={this._showModal}
                     backgroundColor="transparent"
                     iconStyle={{marginRight: 5}}
                 >
-                    <Text style={styles.settings_text}>
-                        Change Theme
-                    </Text>
+                    <TouchableOpacity onPress={this._showModal}>
+                        <Text style={styles.settings_text}>
+                            Change Theme
+                        </Text>
+                    </TouchableOpacity>
                 </Icon.Button>
                 { this.renderModal() }
             </View>

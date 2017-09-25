@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Drawer from 'react-native-drawer';
+import PropTypes from 'prop-types';
 
 import QuoteSwiper from '../ui/quote/quoteSwiper';
 import Top from '../ui/top/top.js';
@@ -93,6 +94,10 @@ class QuoteScreen extends Component {
             </Linear>
         );
     }
+}
+
+QuoteScreen.propTypes = {
+    navigation: PropTypes.object
 }
 
 export default QuoteScreen;

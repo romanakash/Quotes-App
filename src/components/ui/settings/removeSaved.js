@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { styles } from 'react-native-theme';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import PropTypes from 'prop-types';
@@ -11,13 +11,14 @@ const RemoveSaved = () => (
         <Icon.Button size={24}
             color="white"
             name="remove-circle-outline"
-            onPress={() => removeSavedQuotes()}
             backgroundColor="transparent"
             iconStyle={{marginRight: 5}}
         >
-            <Text style={styles.settings_text}>
-                Remove All Saved Quotes
-            </Text>
+            <TouchableOpacity onPress={() => removeSavedQuotes()}>
+                <Text style={styles.settings_text}>
+                    Remove All Saved Quotes
+                </Text>
+            </TouchableOpacity>
         </Icon.Button>
     </View>
 );

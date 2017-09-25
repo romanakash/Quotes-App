@@ -23,7 +23,7 @@ class ThemeSwiper extends Component {
     }
     _renderDotIndicator() {
        return (
-           <PagerDotIndicator pageCount={14}
+           <PagerDotIndicator pageCount={11}
                dotStyle={styles.settings_pagination}
                selectedDotStyle={[styles.settings_pagination, {
                    backgroundColor: 'white'
@@ -64,6 +64,12 @@ const Theme = ({ colors, name, onPress }) => (
 
 ThemeSwiper.propTypes = {
     onClose: PropTypes.func
+}
+
+Theme.propTypes = {
+    colors: PropTypes.array,
+    name: PropTypes.string,
+    onPress: PropTypes.func
 }
 
 export default ThemeSwiper;

@@ -20,7 +20,7 @@ class Quote extends Component {
         this.setState({ saved: this.props.saved })
     }
     _checkDoubleTap = () => {
-        delta = new Date().getTime() - this.state.press;
+        let delta = new Date().getTime() - this.state.press;
         if (delta < 300) {                                  // check for double tap
             this.animation();
             this.saveQuote();
@@ -47,7 +47,7 @@ class Quote extends Component {
         Share.share({
             title: "Quotes Daily",
             message: `${this.props.value} - ${this.props.authorName}
-            \n For more quotes download Quotes Daily from the play store
+            \n Sent from Quotes Daily app
             `
         })
     }
@@ -61,12 +61,13 @@ class Quote extends Component {
                     name={"md-heart"}
                     color="white"
                     size={50}
+                    iconStyle={{opacity: 0.2}}
                     backgroundColor="transparent"
                 />
             </Animatable.View>
         );
     }
-    renderQuote() {;
+    renderQuote() {
         return (
             <TouchableWithoutFeedback
                 onPress={this._checkDoubleTap}
