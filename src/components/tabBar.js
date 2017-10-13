@@ -66,7 +66,7 @@ const styles = {
     container: {
         flex: 1,
         alignSelf: 'stretch',
-        backgroundColor: 'rgba(0,0,0,0.1)',
+        backgroundColor: 'rgba(0,0,0,0.03)',
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center'

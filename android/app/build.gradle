@@ -139,9 +139,9 @@ android {
 }
 
 dependencies {
+    compile project(':mobile-center')
     compile project(':mobile-center-crashes')
     compile project(':mobile-center-analytics')
-    compile project(':mobile-center')
     compile project(':realm')
     compile project(':react-native-push-notification')
     compile project(':react-native-vector-icons')

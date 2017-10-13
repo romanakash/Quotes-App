@@ -3,7 +3,14 @@ import { AsyncStorage } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import PushNotification from 'react-native-push-notification';
 
-import Onboarding from './onboarding';
+import quotesRealm from '../realm/quotesRealm';
+import getInitialQuotes from '../api/getInitialQuotes';
+import getDailyQuotes from '../api/getDailyQuotes';
+import seedSettings from '../realm/seed/seedSettings';
+import checkForNewMonth from '../realm/checkForNewMonth';
+import initNotifications from '../initNotifications';
+
+import OnboardingScreen from './onboarding';
 
 // Navigation stuff
 import DailyScreen from './screens/dailyScreen';
@@ -22,11 +29,6 @@ const AppNavigator = StackNavigator({
     headerMode: 'none',
 })
 
-// Notification Stuff
-PushNotification.configure({
-    onNotification: () => {}
-});
-
 class Main extends Component {
     componentWillMount() {
         this.navigator && this.navigator.dispatch({ type: 'Navigate', routeName, params}); // eslint-disable-line no-undef
@@ -42,7 +44,22 @@ class App extends Component {
     state = {
         firstLaunch: null
     }
+    componentWillMount() {
+        let settings = quotesRealm.objects('Settings');      // seed settings
+        if (settings.length < 1) {
+            seedSettings();
+            initNotifications();
+        }
+        let quotes = quotesRealm.objects('Quote');           // seed quotes
+        if (quotes.length < 1) {
+            getInitialQuotes();
+        }
+    }
     componentDidMount() {
+        // Notification Stuff
+        PushNotification.configure({
+            onNotification: () => {}
+        });
         AsyncStorage.getItem('onboarding').then((value) => {
             if (value === null) {
                 this.setState({ firstLaunch: true })
@@ -61,7 +78,7 @@ class App extends Component {
             case false:
                 return <Main />
             case true:
-                return <Onboarding changeState={this.changeState}/>
+                return <OnboardingScreen changeState={this.changeState}/>
             default:
                 return null
         }

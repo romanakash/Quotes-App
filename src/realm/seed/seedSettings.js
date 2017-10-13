@@ -14,8 +14,8 @@ const seedSettings = () => {
             notificationTime: '9:0',
             month: newMonth,
             gradients: {
-                color_one: '#FF50BA',
-                color_two: '#3459BA',
+                color_one: '#FF512F',
+                color_two: '#dd2476',
             }
         });
     });

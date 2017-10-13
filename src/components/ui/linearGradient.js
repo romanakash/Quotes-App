@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StatusBar } from 'react-native';
+import { StatusBar, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import PropTypes from 'prop-types';
 
@@ -30,13 +30,13 @@ class Linear extends Component {
         return (
             <LinearGradient
                 colors={this.state.colors}
-                style={{flex: 1}}
-                start={{ x: 0.1, y: 0.1 }}
-                end={{ x: 1, y: 0.8 }}
-                locations={[0.1, 1]}
+                style={{flex: 1, paddingTop: StatusBar.currentHeight}}
+                start={{ x: 0, y: 0 }}
+                end={{ x: 1, y: 1 }}
             >
                 <StatusBar
-                    backgroundColor={this.state.colors[0]}
+                    backgroundColor="transparent"
+                    translucent={true}
                 />
                 {this.props.children}
             </LinearGradient>

@@ -4,17 +4,17 @@
 
 const fonts = [
     'Quicksand-Light',
-    'Quicksand-Regular',
-    'Raleway-Light',
-    'Oxygen-Light',
-    'HelveticaNeue-Thin',
     'Futura',
     'Merriweather-Regular',
+    'Quicksand-Regular',
     'Lobster-Regular',
-    'Montserrat-Regular',
+    'Raleway-Light',
+    'Montserrat-Thin',
     'Varela-Regular',
     'BebasNeue Regular',
+    'Oxygen-Light',
     'Sansita-Regular',
+    'HelveticaNeue-Thin',
     'Oswald-Regular',
     'PT-Sans',
     'Myriad-Light'

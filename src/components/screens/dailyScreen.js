@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, DatePickerAndroid, TouchableWithoutFeedback } from 'react-native';
+import { Text, View, DatePickerAndroid, TouchableWithoutFeedback, ScrollView, RefreshControl, NetInfo } from 'react-native';
 import { styles } from 'react-native-theme';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import DateTimePicker from 'react-native-modal-datetime-picker';
@@ -8,48 +8,50 @@ import PropTypes from 'prop-types';
 
 import Linear from '../ui/linearGradient';
 import TabBar from '../tabBar';
-import getDaily from '../../data/getDaily';
+import getDailyQuotes from '../../api/getDailyQuotes';
 import getColor from '../../components/themes/getColor';
 import getFont from '../themes/getFont';
 
 class DailyScreen extends Component {
     state = {
-        data: [],
         daily: null,
         date: new Date(),
-        picker: false
+        picker: false,
+        spinner: false
     }
     _showPicker = () => this.setState({ picker: true });
     _hidePicker = () => this.setState({ picker: false });
 
     componentWillMount() {
-        let ds = getDaily();            // gets the daily [30]
-        this.setState({ data: ds })
-    }
-    componentDidMount() {
-        if (this.state.data !== undefined && this.state.data.length > 0) {
-            this.changeDaily();
-        }
+        this.changeDaily();
     }
     // Changes the daily quote according to this.state.date
     changeDaily() {
-        let { data, date } = this.state;
-        let num = moment(date).format("DD");
-        if (data !== undefined) {
-            for (let obj of data) {
-                let d = moment(obj.date).format("DD");
-                if (d === num) {
+        NetInfo.getConnectionInfo().then((net) => {
+            if (net.type !== "none" && net.type !== "unknown") {
+                this.setState({ spinner: true })
+                let { date } = this.state;
+                let todayDate = parseInt(moment(date).format("DD"), 10);
+                let todayMonth = parseInt(moment(date).format("MM"), 10);
+                let promise = getDailyQuotes(todayMonth, todayDate);
+                promise.then((daily) => {
+                    this.setState({ spinner: false })
                     return this.setState({
                         daily: {
-                            day: obj.day,
-                            value: obj.value,
-                            author: obj.author
+                            day: daily.day,
+                            value: daily.value,
+                            author: daily.author
                         }
                     })
-                }
+                }).catch(() => {
+                    this.setState({ daily: null })
+                    this.setState({ spinner: false })
+                })
             }
-            return this.setState({ daily: null })
-        }
+            else {
+                this.setState({ daily: null })
+            }
+        })
     }
     getMinAndMaxDates(first) {
         var date = this.state.date, y = date.getFullYear(), m = date.getMonth();
@@ -80,10 +82,12 @@ class DailyScreen extends Component {
             );
         }
         else {
+            let { date } = this.state;
+            date = moment(date).format('dddd');
             return (
                 <View style={{ flex: 0.05, marginBottom: 5 }}>
                     <Text style={styles.daily_day}>
-                        {moment().format('dddd')}
+                        {date}
                     </Text>
                 </View>
             );
@@ -105,31 +109,46 @@ class DailyScreen extends Component {
     // Renders the Quote
     renderDaily() {
         let font = getFont();
-        if (this.state.daily !== null) {
-            return (
-                <View style={{ flex: 0.5, paddingTop: 65 }}>
-                    <Text style={[styles.quote_text, { fontFamily: font }]}>
-                        { this.state.daily.value }
-                    </Text>
-                    <Text style={[styles.author_text, { paddingTop: 25 }]}>
-                        { this.state.daily.author }
-                    </Text>
-                </View>
-            );
-        }
-        else {
-            let font = getFont();
-            return (
-                <View style={{ flex: 0.5, paddingTop: 65 }}>
-                    <Text style={[styles.quote_text, { fontFamily: font }]}>
-                        We do not have a Quote for this day
-                    </Text>
-                    <Text style={[styles.author_text, { paddingTop: 25 }]}>
-                        Sorry, Maybe its your internet connection
-                    </Text>
-                </View>
-            );
-        }
+        let colors = getColor();
+        return (
+            <View style={{ flex: 1 }}>
+                <ScrollView style={{flex: 1}}
+                    contentContainerStyle={{ flex: 1}}
+                    refreshControl={
+                        <RefreshControl
+                            refreshing={this.state.spinner}
+                            onRefresh={() => {
+                                this.setState({ spinner: true })
+                                this.changeDaily()
+                                setTimeout(() => this.setState({ spinner: false }), 1000)
+                            }}
+                            colors={colors}
+                            progressBackgroundColor="white"
+                            tintColor="transparent"
+                            progressViewOffset={1}
+                        />}
+                >
+                    { this.state.daily !== null ?
+                        <View style={{paddingTop: 65}}>
+                            <Text style={[styles.quote_text, { fontFamily: font }]}>
+                                { this.state.daily.value }
+                            </Text>
+                            <Text style={[styles.author_text, { paddingTop: 25 }]}>
+                                { this.state.daily.author }
+                            </Text>
+                        </View>:
+                        <View style={{paddingTop: 65}}>
+                            <Text style={[styles.quote_text, { fontFamily: font }]}>
+                                We do not have a Quote for this day
+                            </Text>
+                            <Text style={[styles.author_text, { paddingTop: 25 }]}>
+                                Sorry, Maybe its your internet connection
+                            </Text>
+                        </View>
+                    }
+                </ScrollView>
+            </View>
+        );
     }
     render() {
         const minDate = this.getMinAndMaxDates(true);

@@ -93,11 +93,12 @@ theme.add({
         marginRight: 105,
         marginLeft: 105,
         height: 35,
-        borderRadius: 25
+        borderRadius: 25,
+        elevation: 15
     },
     settings_container: {
         justifyContent: 'center',
-        borderBottomColor: 'rgba(255,255,255,0.3)',
+        borderBottomColor: 'rgba(255,255,255,0.1)',
         borderBottomWidth: 0.8,
     },
     settings_text: {

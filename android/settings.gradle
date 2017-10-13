@@ -1,10 +1,10 @@
 rootProject.name = 'Quotes'
+include ':mobile-center'
+project(':mobile-center').projectDir = new File(rootProject.projectDir, '../node_modules/mobile-center/android')
 include ':mobile-center-crashes'
 project(':mobile-center-crashes').projectDir = new File(rootProject.projectDir, '../node_modules/mobile-center-crashes/android')
 include ':mobile-center-analytics'
 project(':mobile-center-analytics').projectDir = new File(rootProject.projectDir, '../node_modules/mobile-center-analytics/android')
-include ':mobile-center'
-project(':mobile-center').projectDir = new File(rootProject.projectDir, '../node_modules/mobile-center/android')
 include ':realm'
 project(':realm').projectDir = new File(rootProject.projectDir, '../node_modules/realm/android')
 include ':react-native-push-notification'

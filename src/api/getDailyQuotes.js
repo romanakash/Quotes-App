@@ -1,21 +1,17 @@
-// fetches dailies from the api
-
-import api from './init';
-import seedDaily from '../realm/seed/seedDaily';
+import { client, db } from './init';
 import moment from 'moment';
 
-const getDailyQuotes = () => {
-    const month = moment().month() + 1;
-    api
-        .get(`/daily/${month}`)
-        .then((res) => {
-            if (res.data !== undefined) {
-                seedDaily(res.data)
-            }
-            else {
-                return null
-            }
+let collection = db.collection('daily');
+
+const getDailyQuotes = (month, date) => {
+    const promise = new Promise((resolve, reject) => {   //eslint-disable-line
+        client.login().then(() => {
+            collection.find({ month: month, date: date }).then((dailies) => {
+                resolve(dailies[0]);
+            })
         })
+    })
+    return promise;
 }
 
 export default getDailyQuotes;

@@ -1,5 +1,4 @@
 import './ReactotronConfig';
-
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -7,8 +6,9 @@ import {
   View
 } from 'react-native';
 
-import './src/api/init';                    // init for hapi api
-import './src/realm/realmInit';             // init for realm
+
+import './src/realm/quotesRealm';      // defines schema and inits quotesRealm
+import './src/api/init';                    // init for mongodb stitch
 
 import './src/components/themes/default';   // init for theme
 

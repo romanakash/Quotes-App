@@ -1,5 +1,4 @@
 import quotesRealm from '../quotesRealm';
-import Reactotron from 'reactotron-react-native';
 
 const removeSavedQuotes = () => {
     let result = quotesRealm.objects('Quote').filtered('saved = true').snapshot();

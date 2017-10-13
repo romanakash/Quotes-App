@@ -6,8 +6,8 @@ const Quote = {
     properties: {
         id: { type: 'string', indexed: true },
         value: 'string',
-        author: { type: 'string', indexed: true },
-        tagId: { type: 'int', indexed: true },
+        author: { type: 'string' },
+        tagId: { type: 'int' },
         saved: 'bool'
     },
 }
@@ -18,17 +18,6 @@ const AuthorNames = {
     properties: {
         name: { type: 'string' }
     }
-}
-
-const DailyQuotes = {
-    name: 'Daily',
-    properties: {
-        id: 'string',
-        value: 'string',
-        author: 'string',
-        day: 'string',
-        date: 'string',
-    },
 }
 
 const Gradient = {
@@ -52,7 +41,7 @@ const Settings = {
 }
 
 let quotesRealm = new Realm({
-    schema: [Quote, AuthorNames, DailyQuotes, Gradient, Settings],
-    schemaVersion: 1
+    schema: [Quote, AuthorNames, Gradient, Settings],
+    schemaVersion: 0
 });
 export default quotesRealm;

@@ -1,9 +1,10 @@
 // initializes the api to conect to nodejs server
 
-import { create } from 'apisauce';
+import { StitchClient } from 'mongodb-stitch';
 
-const api = create({
-    baseURL: 'https://q-s.herokuapp.com/'
-})
+const appId = "quotes-ywaqc";
+let client = new StitchClient(appId);
 
-export default api;
+let db = client.service('mongodb', 'mongodb-atlas').db('Quote');
+
+export { client, db };

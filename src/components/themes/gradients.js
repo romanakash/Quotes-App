@@ -4,49 +4,49 @@
 
 const gradients = [
     {
-        name: 'VAMPIRE',
-        colors: ['#FF512F', '#dd2476'],
+        name: 'SUNSET',
+        colors: ['#ee0979', '#ff6a00']
     },
     {
         name: 'NIGHT CLUB',
-        colors: ["#fc00ff", "#00dbde"]
+        colors: ['#fc00ff', '#00dbde']
     },
     {
         name: 'DARK SKY',
-        colors: ["#2980b9", "#283E51"]
-    },
-    {
-        name: 'VELVET',
-        colors: ["#26547C", "#EF476F"]
+        colors: ['#2980b9', '#283E51']
     },
     {
         name: 'EARTH',
-        colors: ['#00C9FF', '#92FE9D'],
+        colors: ['#36d1dc', '#5b86e5'],
     },
     {
-        name: 'DECENT',
-        colors: ["#4CA1AF", "#9CCFD8"]
+        name: 'PINK',
+        colors: ['#ec008c', '#fc6767'],
+    },
+    {
+        name: 'VELVET',
+        colors: ['#26547C', '#EF476F']
     },
     {
         name: 'SUPERMAN',
-        colors: ["#0099F7", "#F11712"]
+        colors: ['#0099F7', '#F11712']
     },
     {
         name: 'DEVIL',
-        colors: ["#ED254E", "#011936"]
+        colors: ['#ED254E', '#011936']
     },
     {
         name: 'PURPLE',
-        colors: ['#FF50BA', '#3459BA']
+        colors: ['#4776E6', '#8E54E9',]
     },
     {
-        name: 'DRY LEAF',
-        colors: ["#FFD166", "#06D6A0"]
+        name: 'AMOUR',
+        colors: ['#f77062', '#fe5196']
     },
     {
-        name: 'TURBO',
-        colors: ["#C8EA96", "#135058"]
-    },
+        name: 'MIDNIGHT',
+        colors: ['#2b5876', '#4e4376']
+    }
 ]
 
 export default gradients;

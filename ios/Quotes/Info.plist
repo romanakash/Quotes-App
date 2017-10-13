@@ -93,6 +93,10 @@
 		<string>HelveticaNeue-Thin.ttf</string>
 		<string>PT-Sans.ttf</string>
 		<string>Myriad-Light.ttf</string>
+		<string>Feather.ttf</string>
+		<string>Montserrat-Thin.ttf</string>
+		<string>Montserrat-ExtraLight.ttf</string>
+		<string>Montserrat-Light.ttf</string>
 	</array>
 </dict>
 </plist>
