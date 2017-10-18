@@ -1,6 +1,5 @@
 <resources>
     <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey">FqBQQcnFkcP8YZdEyiy9mMOaFYBhfa6f2b01-b67d-4c54-914b-2a6f59984175</string>
-    <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey"></string>
     <string moduleConfig="true" name="mobileCenterCrashes_whenToSendCrashes">ALWAYS_SEND</string>
     <string moduleConfig="true" name="mobileCenterAnalytics_whenToEnableAnalytics">ALWAYS_SEND</string>
     <string name="app_name">Quotes</string>
