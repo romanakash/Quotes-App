@@ -88,6 +88,10 @@
 		5387FD33C0E14C78B4F8DB92 /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEA4EB4DA0404D129AA8E500 /* Montserrat-Thin.ttf */; };
 		4F433CE2163C425E82D673F2 /* Montserrat-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 22F36D2B39F641E4A4736593 /* Montserrat-ExtraLight.ttf */; };
 		D8CD31ABDC114AAB817A4B8F /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E1E83DCB29C945B6BD094A17 /* Montserrat-Light.ttf */; };
+		F8E10FF2930D44EC8A73669A /* libRNAdMobManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 147FD76AE3704008A93E264D /* libRNAdMobManager.a */; };
+		46194FCAAA3E4578A809B387 /* libRNPush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C1D7D9336E6D4D4984EE37C1 /* libRNPush.a */; };
+		A694E02B846A4893A30AB7A6 /* libRCTOneSignal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 216E794BF2F84209968773AD /* libRCTOneSignal.a */; };
+		0B93D90EE37D4C75B7782185 /* libCodePush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88266CD3472B4361AA601039 /* libCodePush.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -366,6 +370,14 @@
 		CEA4EB4DA0404D129AA8E500 /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; name = "Montserrat-Thin.ttf"; path = "../fonts/Montserrat-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		22F36D2B39F641E4A4736593 /* Montserrat-ExtraLight.ttf */ = {isa = PBXFileReference; name = "Montserrat-ExtraLight.ttf"; path = "../fonts/Montserrat-ExtraLight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		E1E83DCB29C945B6BD094A17 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; name = "Montserrat-Light.ttf"; path = "../fonts/Montserrat-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3E2EEC34EB1F48F7A22DFF0A /* RNAdMobManager.xcodeproj */ = {isa = PBXFileReference; name = "RNAdMobManager.xcodeproj"; path = "../node_modules/react-native-admob/ios/RNAdMobManager.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		147FD76AE3704008A93E264D /* libRNAdMobManager.a */ = {isa = PBXFileReference; name = "libRNAdMobManager.a"; path = "libRNAdMobManager.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		2A5EAD6F73A54C468C376CB6 /* RNPush.xcodeproj */ = {isa = PBXFileReference; name = "RNPush.xcodeproj"; path = "../node_modules/mobile-center-push/ios/RNPush.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		C1D7D9336E6D4D4984EE37C1 /* libRNPush.a */ = {isa = PBXFileReference; name = "libRNPush.a"; path = "libRNPush.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		16507A64FDB34694803B8B38 /* RCTOneSignal.xcodeproj */ = {isa = PBXFileReference; name = "RCTOneSignal.xcodeproj"; path = "../node_modules/react-native-onesignal/ios/RCTOneSignal.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		216E794BF2F84209968773AD /* libRCTOneSignal.a */ = {isa = PBXFileReference; name = "libRCTOneSignal.a"; path = "libRCTOneSignal.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		EFDF5CA1A0E645B2AB9D417D /* CodePush.xcodeproj */ = {isa = PBXFileReference; name = "CodePush.xcodeproj"; path = "../node_modules/react-native-code-push/ios/CodePush.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		88266CD3472B4361AA601039 /* libCodePush.a */ = {isa = PBXFileReference; name = "libCodePush.a"; path = "libCodePush.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -400,6 +412,10 @@
 				F5325431D90643A39E167DB4 /* libRNMobileCenter.a in Frameworks */,
 				B933F75CAFFE4DDAA77E2E6D /* libRNAnalytics.a in Frameworks */,
 				69A66C60330D4C809AAB24FE /* libRNCrashes.a in Frameworks */,
+				F8E10FF2930D44EC8A73669A /* libRNAdMobManager.a in Frameworks */,
+				46194FCAAA3E4578A809B387 /* libRNPush.a in Frameworks */,
+				A694E02B846A4893A30AB7A6 /* libRCTOneSignal.a in Frameworks */,
+				0B93D90EE37D4C75B7782185 /* libCodePush.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,6 +588,10 @@
 				EAB756A4427C43DB80FBEE7C /* RNMobileCenter.xcodeproj */,
 				B5E0265FC8E34BD1A2560D2A /* RNAnalytics.xcodeproj */,
 				CEFA759A146846D5BF469A05 /* RNCrashes.xcodeproj */,
+				3E2EEC34EB1F48F7A22DFF0A /* RNAdMobManager.xcodeproj */,
+				2A5EAD6F73A54C468C376CB6 /* RNPush.xcodeproj */,
+				16507A64FDB34694803B8B38 /* RCTOneSignal.xcodeproj */,
+				EFDF5CA1A0E645B2AB9D417D /* CodePush.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1210,9 +1230,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1220,6 +1237,10 @@
 					"$(SRCROOT)/../node_modules/mobile-center/ios/RNMobileCenter",
 					"$(SRCROOT)/../node_modules/mobile-center-analytics/ios/RNAnalytics",
 					"$(SRCROOT)/../node_modules/mobile-center-crashes/ios/RNCrashes",
+					"$(SRCROOT)/../node_modules/react-native-admob/ios",
+					"$(SRCROOT)/../node_modules/mobile-center-push/ios/RNPush",
+					"$(SRCROOT)/../node_modules/react-native-onesignal/ios/RCTOneSignal/**",
+					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
 				);
 			};
 			name = Debug;
@@ -1241,9 +1262,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1251,6 +1269,10 @@
 					"$(SRCROOT)/../node_modules/mobile-center/ios/RNMobileCenter",
 					"$(SRCROOT)/../node_modules/mobile-center-analytics/ios/RNAnalytics",
 					"$(SRCROOT)/../node_modules/mobile-center-crashes/ios/RNCrashes",
+					"$(SRCROOT)/../node_modules/react-native-admob/ios",
+					"$(SRCROOT)/../node_modules/mobile-center-push/ios/RNPush",
+					"$(SRCROOT)/../node_modules/react-native-onesignal/ios/RCTOneSignal/**",
+					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
 				);
 			};
 			name = Release;
@@ -1276,6 +1298,10 @@
 					"$(SRCROOT)/../node_modules/mobile-center/ios/RNMobileCenter",
 					"$(SRCROOT)/../node_modules/mobile-center-analytics/ios/RNAnalytics",
 					"$(SRCROOT)/../node_modules/mobile-center-crashes/ios/RNCrashes",
+					"$(SRCROOT)/../node_modules/react-native-admob/ios",
+					"$(SRCROOT)/../node_modules/mobile-center-push/ios/RNPush",
+					"$(SRCROOT)/../node_modules/react-native-onesignal/ios/RCTOneSignal/**",
+					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
 				);
 			};
 			name = Debug;
@@ -1300,6 +1326,10 @@
 					"$(SRCROOT)/../node_modules/mobile-center/ios/RNMobileCenter",
 					"$(SRCROOT)/../node_modules/mobile-center-analytics/ios/RNAnalytics",
 					"$(SRCROOT)/../node_modules/mobile-center-crashes/ios/RNCrashes",
+					"$(SRCROOT)/../node_modules/react-native-admob/ios",
+					"$(SRCROOT)/../node_modules/mobile-center-push/ios/RNPush",
+					"$(SRCROOT)/../node_modules/react-native-onesignal/ios/RCTOneSignal/**",
+					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
 				);
 			};
 			name = Release;
@@ -1330,9 +1360,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1340,6 +1367,10 @@
 					"$(SRCROOT)/../node_modules/mobile-center/ios/RNMobileCenter",
 					"$(SRCROOT)/../node_modules/mobile-center-analytics/ios/RNAnalytics",
 					"$(SRCROOT)/../node_modules/mobile-center-crashes/ios/RNCrashes",
+					"$(SRCROOT)/../node_modules/react-native-admob/ios",
+					"$(SRCROOT)/../node_modules/mobile-center-push/ios/RNPush",
+					"$(SRCROOT)/../node_modules/react-native-onesignal/ios/RCTOneSignal/**",
+					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
 				);
 			};
 			name = Debug;
@@ -1370,9 +1401,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1380,6 +1408,10 @@
 					"$(SRCROOT)/../node_modules/mobile-center/ios/RNMobileCenter",
 					"$(SRCROOT)/../node_modules/mobile-center-analytics/ios/RNAnalytics",
 					"$(SRCROOT)/../node_modules/mobile-center-crashes/ios/RNCrashes",
+					"$(SRCROOT)/../node_modules/react-native-admob/ios",
+					"$(SRCROOT)/../node_modules/mobile-center-push/ios/RNPush",
+					"$(SRCROOT)/../node_modules/react-native-onesignal/ios/RCTOneSignal/**",
+					"$(SRCROOT)/../node_modules/react-native-code-push/ios/CodePush/**",
 				);
 			};
 			name = Release;
@@ -1405,9 +1437,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -1432,9 +1461,6 @@
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};

@@ -66,6 +66,7 @@ import com.android.build.OutputFile
  */
 
 apply from: "../../node_modules/react-native/react.gradle"
+apply from: "../../node_modules/react-native-code-push/android/codepush.gradle"
 
 /**
  * Set this to true to create two separate APKs instead of one:
@@ -95,6 +96,8 @@ android {
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
+        manifestPlaceholders = [onesignal_app_id: "47b6d375-e176-433c-aafb-2091d1649587",
+                               onesignal_google_project_number: "469652464815"]
     }
     // Signing Added
     signingConfigs {
@@ -139,11 +142,14 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-code-push')
+    compile project(':react-native-onesignal')
+    compile project(':mobile-center-push')
+    compile project(':react-native-admob')
     compile project(':mobile-center')
     compile project(':mobile-center-crashes')
     compile project(':mobile-center-analytics')
     compile project(':realm')
-    compile project(':react-native-push-notification')
     compile project(':react-native-vector-icons')
     compile project(':react-native-linear-gradient')
     compile fileTree(dir: "libs", include: ["*.jar"])
@@ -157,3 +163,5 @@ task copyDownloadableDepsToLibs(type: Copy) {
     from configurations.compile
     into 'libs'
 }
+
+apply plugin: 'com.google.gms.google-services'

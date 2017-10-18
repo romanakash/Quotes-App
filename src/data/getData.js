@@ -7,10 +7,9 @@ const getData = (tag) => {
         return randomQuotes(tagId)
     }
     else {
-        let values = tags;
-        for (let value of values) {
+        for (let value of tags) {
             if (value === tag) {
-                tagId = values.indexOf(value);
+                tagId = tags.indexOf(value);
             }
         }
         return randomQuotes(tagId)

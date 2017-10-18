@@ -23,7 +23,8 @@ const tagsDict = {
     '21': 'Technology',
     '22': 'Time',
     '23': 'Travel',
-    '24': 'Literature'
+    '24': 'Literature',
+    '25': 'Politics'
 }
 
 import _ from 'lodash';

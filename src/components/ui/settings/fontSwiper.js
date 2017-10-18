@@ -47,7 +47,7 @@ const Font = ({ colors, font, onPress }) => (
     <LinearGradient
         colors={colors}
         style={{flex: 1}}
-        start={{ x: 0.25, y: 0.25 }}
+        start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 1 }}
     >
         <View style={styles.change_theme_container}>

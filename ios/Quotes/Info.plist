@@ -98,5 +98,7 @@
 		<string>Montserrat-ExtraLight.ttf</string>
 		<string>Montserrat-Light.ttf</string>
 	</array>
+	<key>CodePushDeploymentKey</key>
+	<string>deployment-key-here</string>
 </dict>
 </plist>

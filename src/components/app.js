@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 import { AsyncStorage } from 'react-native';
 import { StackNavigator } from 'react-navigation';
-import PushNotification from 'react-native-push-notification';
-
 import quotesRealm from '../realm/quotesRealm';
 import getInitialQuotes from '../api/getInitialQuotes';
 import getDailyQuotes from '../api/getDailyQuotes';
 import seedSettings from '../realm/seed/seedSettings';
 import checkForNewMonth from '../realm/checkForNewMonth';
-import initNotifications from '../initNotifications';
 
 import OnboardingScreen from './onboarding';
 
@@ -48,7 +45,6 @@ class App extends Component {
         let settings = quotesRealm.objects('Settings');      // seed settings
         if (settings.length < 1) {
             seedSettings();
-            initNotifications();
         }
         let quotes = quotesRealm.objects('Quote');           // seed quotes
         if (quotes.length < 1) {
@@ -56,10 +52,6 @@ class App extends Component {
         }
     }
     componentDidMount() {
-        // Notification Stuff
-        PushNotification.configure({
-            onNotification: () => {}
-        });
         AsyncStorage.getItem('onboarding').then((value) => {
             if (value === null) {
                 this.setState({ firstLaunch: true })

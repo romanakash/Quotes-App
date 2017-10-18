@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons'
 import { styles } from 'react-native-theme';
+import { AdMobBanner } from 'react-native-admob';
+import PropTypes from 'prop-types';
 
 import Linear from '../ui/linearGradient';
 import TabBar from '../tabBar';
@@ -50,12 +52,22 @@ class SavedScreen extends Component {
                     </View>
                     { this.renderSaved() }
                 </View>
+                <View style={{alignSelf:'center'}}>
+                    <AdMobBanner
+                        adSize="banner"
+                        adUnitID="ca-app-pub-3634594191727950/8623089816"
+                    />
+                </View>
                 <View style={{ flex: 0.1 }}>
                     <TabBar navigation={this.props.navigation}/>
                 </View>
             </Linear>
         );
     }
+}
+
+SavedScreen.propTypes = {
+    navigation: PropTypes.object
 }
 
 export default SavedScreen;

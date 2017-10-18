@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import Linear from '../ui/linearGradient';
 import ChangeTheme from '../ui/settings/changeTheme';
 import ChangeFont from '../ui/settings/changeFont';
-import ChangeNotify from '../ui/settings/changeNotify';
+import RateApp from '../ui/settings/rateApp';
 import RemoveSaved from '../ui/settings/removeSaved';
 import TabBar from '../tabBar';
 
@@ -50,8 +50,8 @@ class SettingsScreen extends Component {
                     <View style={{ flex: 1, marginTop: 35, marginLeft: 25, marginRight: 20 }}>
                         <ChangeTheme />
                         <ChangeFont />
-                        <ChangeNotify />
                         <RemoveSaved />
+                        <RateApp />
                     </View>
                     {this.renderLogo()}
                 </View>

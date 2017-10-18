@@ -4,6 +4,7 @@ import { styles } from 'react-native-theme';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import DateTimePicker from 'react-native-modal-datetime-picker';
 import moment from 'moment';
+import { AdMobBanner } from 'react-native-admob';
 import PropTypes from 'prop-types';
 
 import Linear from '../ui/linearGradient';
@@ -168,6 +169,12 @@ class DailyScreen extends Component {
                     onConfirm={this._handleDate}
                     onCancel={this._hidePicker}
                 />
+                <View style={{alignSelf:'center'}}>
+                    <AdMobBanner
+                        adSize="banner"
+                        adUnitID="ca-app-pub-3634594191727950/8623089816"
+                    />
+                </View>
                 <View style={{ flex: 0.1, marginTop: 25 }}>
                     <TabBar navigation={this.props.navigation}/>
                 </View>

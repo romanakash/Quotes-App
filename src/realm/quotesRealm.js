@@ -34,7 +34,6 @@ const Settings = {
     properties: {
         id: 'int',
         quoteFamily: 'string',
-        notificationTime: 'string',
         month: 'int',
         gradients: 'Gradient'
     }

@@ -6,7 +6,7 @@ import _ from 'lodash';
 
 import tags from '../../../data/tags'
 
-const tagSorted = tags.sort();
+const tagSorted = _.sortBy(tags);
 
 class DrawerMenu extends Component {
     renderCategories() {

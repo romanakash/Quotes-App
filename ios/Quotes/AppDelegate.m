@@ -8,6 +8,8 @@
  */
 
 #import "AppDelegate.h"
+#import <RNPush/RNPush.h>
+#import <CodePush/CodePush.h>
 #import <RNCrashes/RNCrashes.h>
 #import <RNAnalytics/RNAnalytics.h>
 #import <RNMobileCenter/RNMobileCenter.h>
@@ -21,13 +23,20 @@
 {
   NSURL *jsCodeLocation;
 
+  [RNPush register];  // Initialize Mobile Center push
+
   [RNCrashes registerWithCrashDelegate: [[RNCrashesDelegateAlwaysSend alloc] init]];  // Initialize Mobile Center crashes
 
   [RNAnalytics registerWithInitiallyEnabled:true];  // Initialize Mobile Center analytics
 
   [RNMobileCenter register];  // Initialize Mobile Center 
 
-  jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
+  
+    #ifdef DEBUG
+        jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
+    #else
+        jsCodeLocation = [CodePush bundleURL];
+    #endif
 
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
                                                       moduleName:@"Quotes"

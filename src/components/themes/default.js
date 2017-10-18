@@ -6,7 +6,6 @@ theme.add({
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'column',
-        paddingBottom: 50
     },
     quote_text: {
         color: 'white',
@@ -98,7 +97,7 @@ theme.add({
     },
     settings_container: {
         justifyContent: 'center',
-        borderBottomColor: 'rgba(255,255,255,0.1)',
+        borderBottomColor: 'rgba(255,255,255,0.2)',
         borderBottomWidth: 0.8,
     },
     settings_text: {

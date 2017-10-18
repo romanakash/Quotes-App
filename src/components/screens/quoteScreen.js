@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Drawer from 'react-native-drawer';
+import { AdMobBanner, AdMobInterstitial } from 'react-native-admob';
 import PropTypes from 'prop-types';
 
 import QuoteSwiper from '../ui/quote/quoteSwiper';
@@ -15,7 +16,7 @@ import getQuotesByAuthor from '../../data/getQuotesByAuthor';
 import tags from '../../data/tags';
 import getColor from '../themes/getColor';
 import getFont from '../themes/getFont';
-
+AdMobInterstitial.setAdUnitID('ca-app-pub-3634594191727950/1733997818');
 class QuoteScreen extends Component {
     state = {
         data: [],
@@ -25,6 +26,12 @@ class QuoteScreen extends Component {
     componentDidMount() {
         this.setState({ tag: 'All' })
         this.getQuotes('All');
+        AdMobInterstitial.requestAd().then(() => AdMobInterstitial.showAd())
+        AdMobInterstitial.addEventListener('adClosed', () => {
+            setTimeout(() => {
+                AdMobInterstitial.requestAd().then(() => AdMobInterstitial.showAd())
+            }, 30000)
+        })
     }
     getQuotes = (tag) => {
         if (tag === undefined) {                    // for refresh
@@ -84,6 +91,12 @@ class QuoteScreen extends Component {
                                 getQuotes={this.getQuotes}
                                 colors={colors}
                                 font={getFont()}
+                            />
+                        </View>
+                        <View style={{alignSelf:'center'}}>
+                            <AdMobBanner
+                                adSize="banner"
+                                adUnitID="ca-app-pub-3634594191727950/8623089816"
                             />
                         </View>
                         <View style={{flex: 0.1}}>

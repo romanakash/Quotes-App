@@ -5,7 +5,7 @@ import {
   Text,
   View
 } from 'react-native';
-
+import codePush from "react-native-code-push";
 
 import './src/realm/quotesRealm';      // defines schema and inits quotesRealm
 import './src/api/init';                    // init for mongodb stitch
@@ -21,5 +21,7 @@ export default class Quotes extends Component {
         );
     }
 }
+
+Quotes = codePush(Quotes);
 
 AppRegistry.registerComponent('Quotes', () => Quotes);
